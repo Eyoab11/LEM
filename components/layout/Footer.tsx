@@ -9,7 +9,6 @@ export const Footer = () => {
     { name: 'About', href: '#about' },
     { name: 'Work', href: '#work' },
     { name: 'Contact', href: '/contact' },
-    { name: '404', href: '/404' },
   ];
 
   const socialLinks = [

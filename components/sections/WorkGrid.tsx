@@ -14,37 +14,37 @@ const workItems: WorkItem[] = [
   {
     id: 1,
     title: "THE MYSTERIOUS CITIES OF GOLD",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=400&auto=format&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTktb4JnBZbIC3RG3dIBfdKeVoDNRE_CS9LBg&s",
     services: "Production, Mixing"
   },
   {
     id: 2,
-    title: "THE MYSTERIOUS CITIES OF GOLD",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=400&auto=format&fit=crop",
+    title: "He-Man & The Masters Of The Universe",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToHuu7iPmDyXcZP7_E2wwxGbyPOYYPn_1_rA&s",
     services: "Production, Vocal Recording, Mixing"
   },
   {
     id: 3,
-    title: "THE MYSTERIOUS CITIES OF GOLD",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=400&auto=format&fit=crop",
+    title: "M.A.S.K",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPOQsYFi38y7GppmUd2yBANJSmesvtTvnSOA&s",
     services: "Production, Sound Design, Mastering"
   },
   {
     id: 4,
-    title: "THE MYSTERIOUS CITIES OF GOLD",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=400&auto=format&fit=crop",
+    title: "Rainbow Brite",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToO5fl85vw85gbvatsQNtQ-tDfXZ9fOtdF2g&s",
     services: "Beat Production, Mixing"
   },
   {
     id: 5,
-    title: "THE MYSTERIOUS CITIES OF GOLD",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=400&auto=format&fit=crop",
+    title: "Heathcliff",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy1p0rdPmx-lpfVWFhbZisjiRDNepJqO7HaA&s",
     services: "Production, Vocal Tuning, Mastering"
   },
   {
     id: 6,
-    title: "THE MYSTERIOUS CITIES OF GOLD",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=400&auto=format&fit=crop",
+    title: "Spiderman",
+    image: "https://m.media-amazon.com/images/M/MV5BYWRkN2M1NmQtZjhjMi00ODFjLTk2ODctYWJiOWNkNjg1OGY4XkEyXkFqcGc@._V1_.jpg",
     services: "Production, Mixing, Mastering"
   }
 ];
@@ -81,11 +81,11 @@ export const WorkGrid = () => {
 
                 {/* Image Container - 4:3 aspect ratio, smaller */}
                 <div className="relative overflow-hidden rounded-lg w-full aspect-[4/3] mb-4">
-                  {/* Placeholder Image - Zooms on hover but stays within card boundaries */}
+                  {/* Image - Zooms on hover but stays within card boundaries */}
                   <motion.div
                     className="w-full h-full bg-cover bg-center"
                     style={{
-                      backgroundImage: `url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=400&auto=format&fit=crop')`
+                      backgroundImage: `url('${item.image}')`
                     }}
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
@@ -95,15 +95,20 @@ export const WorkGrid = () => {
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
                     {/* Play Button */}
                     <div className="transform scale-0 group-hover:scale-100 transition-transform duration-300 mb-3">
-                      <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200">
+                      <a 
+                        href="https://soundcloud.com/shukilevy/tracks"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
+                      >
                         <Play className="w-6 h-6 text-black ml-1" fill="black" />
-                      </div>
+                      </a>
                     </div>
                     
                     {/* Play on Spotify Text */}
                     <div className="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                       <p className="text-white text-sm font-medium tracking-wide">
-                        Play on Spotify
+                        Play on SoundCloud
                       </p>
                     </div>
                   </div>

@@ -52,6 +52,7 @@ export const PastWork = () => {
 
   return (
     <section 
+      id="past-work"
       ref={containerRef}
       className="h-[180vh] bg-black flex items-start justify-center pt-20"
     >

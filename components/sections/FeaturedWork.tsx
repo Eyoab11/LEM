@@ -17,25 +17,25 @@ const workItems: WorkItem[] = [
     id: 1,
     title: "MIGHTY MORPHIN\nPOWER RANGERS",
     description: "A franchise co-created under the leadership of Shuki Levy that became one of the highest-grossing children's properties of all time, generating $6.47 billion in licensed merchandise and captivating audiences in over 150 countries. This world-building blueprint remains foundational to LEM's creative model.",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=800&auto=format&fit=crop"
+    image: "/power.jpg"
   },
   {
     id: 2,
     title: "THE LEM CREATIVE &\nMERCHANDISING\nENGINE",
     description: "A proven production model that integrates storytelling, gaming, and consumer products into a unified revenue system. With deep ties to the gaming and merchandise industries, LEM's approach converts creative worlds into high-value global franchises capable of producing $20M+ in profits across three verticals—leading to projected $1.8-$2B exits within 3-5 years.",
-    image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=800&auto=format&fit=crop"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBVABnZBx92UcP99Z-kNDJl_GX0_MHEWcwg&s"
   },
   {
     id: 3,
     title: "THE LEM IP LIBRARY —\n30+ ORIGINAL SERIES,\nFILMS & GAMES",
     description: "A robust catalog of over 30 fully developed IPs engineered for fast production, global distribution, and merchandising. Each property is designed with rights ownership and scalability at the core—allowing LEM to accelerate output at studio speed and capture the exponential upside of ancillary revenue.",
-    image: "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=800&auto=format&fit=crop"
+    image: "https://upload.wikimedia.org/wikipedia/en/1/18/Benedict_Cumberbatch_as_Doctor_Strange.jpeg"
   },
   {
     id: 4,
     title: "SPIDER MAN",
     description: "Shuki composed the theme for the X-Men animated series in 1997. That theme was recently featured in the blockbuster film Dr. Strange. Screenheart made note of the song choice, which has delighted fans globally. One of the coolest pieces of music used in Doctor Strange 2 is the crowd-pleasing 'X-Men '97 Theme' composed by Haim Saban and Shuki Levy for the animated X-Men series that ran from 1992 to 1997. Not only is the song extremely uptempo compared to some of the melancholic musical scores, it also plays directly to the nostalgia of fans of Marvel going back 25 years.",
-    image: "https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=800&auto=format&fit=crop"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2PWbTZ3jArSfVutpHvdu4441fBWJLYocuvg&s"
   }
 ];
 
@@ -50,14 +50,14 @@ export const FeaturedWork = () => {
   return (
     <>
       {/* Section Header */}
-      <section className="min-h-screen bg-black flex items-center justify-center px-8 py-20">
+      <section id="featured-work" className="min-h-screen bg-black flex items-center justify-center px-8 py-12">
         <div className="max-w-7xl mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-20"
+            className="text-center mb-12"
           >
             <motion.div 
               className="w-16 h-0.5 bg-white mx-auto mb-8"
@@ -144,7 +144,6 @@ export const FeaturedWork = () => {
                           <Button 
                             variant="outline" 
                             size="md"
-                            className="text-gray-300 border-gray-600 hover:border-white hover:text-white"
                           >
                             Contact me
                           </Button>

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Button } from '../ui/Button';
 import { Play } from 'lucide-react';
 
@@ -10,9 +11,9 @@ export const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat"
+          className="w-full h-full bg-cover bg-center bg-no-repeat grayscale"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2070&auto=format&fit=crop')`
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/power.jpg')`
           }}
         />
       </div>
@@ -24,27 +25,27 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20"
+          className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-full px-8 py-4 mb-8 border border-white/20"
         >
           {/* Rotating Disk */}
           <div className="relative">
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              className="w-8 h-8 rounded-full border-2 border-orange-500 relative overflow-hidden"
+              className="w-12 h-12 rounded-full border-2 border-orange-500 relative overflow-hidden"
             >
               {/* Disk Image */}
               <div 
                 className="w-full h-full bg-cover bg-center"
                 style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=100&auto=format&fit=crop')`
+                  backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR966p5PDMZiGo7QWtwpS0JK6trL6RG9c7KpA&s')`
                 }}
               />
               {/* Center Hole */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-black rounded-full border border-orange-500"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-black rounded-full border border-orange-500"></div>
             </motion.div>
           </div>
-          <span className="text-white text-sm font-medium">Music Composer & Producer</span>
+          <span className="text-white text-base font-medium">Music Composer & Producer</span>
         </motion.div>
 
         {/* Main Heading */}
@@ -68,17 +69,17 @@ export const HeroSection = () => {
           the most successful children's franchises in history.
         </motion.p>
 
-        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mb-12"
         >
-          <Button variant="primary" size="lg">
-            <Play size={20} />
-            Let's Talk Music
-          </Button>
+          <Link href="/contact">
+            <Button variant="primary" size="lg">
+              Let's Talk Music
+            </Button>
+          </Link>
         </motion.div>
 
         {/* Stats */}

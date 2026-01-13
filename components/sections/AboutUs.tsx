@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Button } from '../ui/Button';
 
 export const AboutUs = () => {
@@ -51,7 +52,7 @@ export const AboutUs = () => {
   };
 
   return (
-    <section className="h-screen bg-black flex items-center justify-center px-8">
+    <section id="about-us" className="h-screen bg-black flex items-center justify-center px-8">
       <div className="max-w-6xl mx-auto w-full">
         {/* Section Header - Reduced spacing */}
         <motion.div
@@ -94,7 +95,7 @@ export const AboutUs = () => {
               <div 
                 className="w-full h-full bg-cover bg-center bg-gradient-to-b from-transparent to-black/20"
                 style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop')`
+                  backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR966p5PDMZiGo7QWtwpS0JK6trL6RG9c7KpA&s')`
                 }}
               />
             </div>
@@ -131,7 +132,6 @@ export const AboutUs = () => {
           ))}
         </div>
 
-        {/* CTA Button - Reduced spacing */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -139,9 +139,11 @@ export const AboutUs = () => {
           viewport={{ once: true }}
           className="text-center mt-8"
         >
-          <Button variant="primary" size="lg">
-            Let's talk
-          </Button>
+          <Link href="/contact">
+            <Button variant="primary" size="lg">
+              Let's talk
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

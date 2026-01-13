@@ -6,9 +6,9 @@ import { Button } from '../ui/Button';
 
 export const Header = () => {
   const navItems = [
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Work', href: '#work' },
+    { name: 'Services', href: '#featured-work' },
+    { name: 'About', href: '#about-us' },
+    { name: 'Work', href: '#past-work' },
     { name: 'Contact', href: '/contact' }
   ];
 
@@ -21,8 +21,12 @@ export const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-white font-bold text-xl">
-          LE
+        <Link href="/" className="flex items-center">
+          <img 
+            src="/levi.png" 
+            alt="Levi Logo" 
+            className="h-8 w-auto"
+          />
         </Link>
 
         {/* Navigation */}
@@ -36,9 +40,23 @@ export const Header = () => {
             >
               <Link
                 href={item.href}
-                className="text-gray-300 hover:text-white transition-colors duration-300"
+                className="relative text-gray-300 hover:text-white transition-colors duration-300 group"
               >
-                {item.name}
+                <motion.span
+                  className="inline-block"
+                  whileHover={{ 
+                    y: [0, -4, 0],
+                    transition: { 
+                      duration: 0.4, 
+                      ease: "easeInOut",
+                      times: [0, 0.5, 1]
+                    }
+                  }}
+                >
+                  {item.name}
+                </motion.span>
+                {/* Underline that slides in from left */}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300" />
               </Link>
             </motion.div>
           ))}
@@ -50,9 +68,11 @@ export const Header = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Button variant="outline" size="sm">
-            Get in touch
-          </Button>
+          <Link href="/contact">
+            <Button variant="outline" size="sm">
+              Get in touch
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </motion.header>

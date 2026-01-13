@@ -18,7 +18,7 @@ export const Button = ({
 }: ButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
   
-  const baseClasses = 'font-medium rounded-full transition-all duration-300 cursor-pointer relative overflow-visible';
+  const baseClasses = 'inline-flex items-center justify-center gap-2 font-medium rounded-full transition-all duration-300 cursor-pointer relative overflow-visible';
   
   const variants = {
     primary: 'bg-white text-black hover:bg-gray-100',

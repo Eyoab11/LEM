@@ -127,7 +127,7 @@ export const FeaturedWork = () => {
                       transition: { duration: 0.3, ease: "easeOut" }
                     }}
                   >
-                    <div className="grid md:grid-cols-2 gap-0">
+                    <div className="grid md:grid-cols-2">
                       {/* Left Content */}
                       <div className="p-12 lg:p-16 flex flex-col justify-center">
                         <div className="w-12 h-0.5 bg-white mb-8" />

@@ -75,7 +75,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mb-12"
         >
-          <Button variant="primary" size="lg" className="inline-flex items-center gap-2">
+          <Button variant="primary" size="lg">
             <Play size={20} />
             Let's Talk Music
           </Button>
@@ -103,7 +103,7 @@ export const HeroSection = () => {
           {Array.from({ length: 25 }).map((_, i) => (
             <motion.div
               key={i}
-              className="w-6 bg-gray-500 rounded-full"
+              className="w-1.5 bg-gray-500 rounded-full"
               animate={{
                 height: [8, Math.random() * 60 + 8, 8],
               }}

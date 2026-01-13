@@ -1,12 +1,15 @@
 import { Header } from '../../components/layout/Header';
+import { Footer } from '../../components/layout/Footer';
+import { ContactForm } from '../../components/sections/ContactForm';
+import { FAQ } from '../../components/sections/FAQ';
 
 export default function Contact() {
   return (
     <main>
       <Header />
-      <div className="min-h-screen pt-20 flex items-center justify-center">
-        <h1 className="text-4xl text-white">Contact Page - Coming Soon</h1>
-      </div>
+      <ContactForm />
+      <FAQ />
+      <Footer />
     </main>
   );
 }

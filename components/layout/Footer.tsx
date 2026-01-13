@@ -32,8 +32,12 @@ export const Footer = () => {
             className="lg:col-span-2"
           >
             {/* Logo */}
-            <div className="text-white font-bold text-2xl mb-6">
-              LE
+            <div className="flex items-center mb-6">
+              <img 
+                src="/levi.png" 
+                alt="Levi Logo" 
+                className="h-8 w-auto"
+              />
             </div>
             
             {/* Tagline */}

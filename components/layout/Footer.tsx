@@ -12,10 +12,9 @@ export const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'Instagram', href: 'https://instagram.com' },
-    { name: 'Twitter', href: 'https://twitter.com' },
-    { name: 'Youtube', href: 'https://youtube.com' },
-    { name: 'Facebook', href: 'https://facebook.com' },
+    { name: 'Facebook', href: 'https://web.facebook.com/people/Levy-Eromo-Media/61569304960482/' },
+    { name: 'Twitter', href: 'https://x.com/LevyEromoMedia' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/levy-eromo-media/' },
   ];
 
   return (

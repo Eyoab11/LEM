@@ -6,6 +6,7 @@ import { Button } from '../ui/Button';
 
 export const Header = () => {
   const navItems = [
+    { name: 'Home', href: '/' },
     { name: 'Services', href: '/#featured-work' },
     { name: 'About', href: '/#about-us' },
     { name: 'Work', href: '/#past-work' },
@@ -20,17 +21,8 @@ export const Header = () => {
       className="absolute top-0 left-0 right-0 z-50 bg-transparent"
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex-shrink-0">
-          <motion.img
-            src="/levi.png"
-            alt="Levy Eromo Media"
-            className="h-12 w-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          />
-        </Link>
+        {/* Empty space to maintain layout */}
+        <div className="flex-shrink-0 w-12"></div>
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-8">

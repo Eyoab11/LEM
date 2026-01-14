@@ -17,7 +17,7 @@ export const LogoCarousel = () => {
   const infiniteLogos = [...logos, ...logos, ...logos];
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden px-8 md:px-16 py-12">
+    <section className="py-8 md:py-12 lg:min-h-screen flex items-center justify-center bg-black relative overflow-hidden px-8 md:px-16">
       {/* Left fade overlay */}
       <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
       

@@ -123,62 +123,101 @@ export const FeaturedWork = () => {
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <div className="max-w-6xl mx-auto w-full">
-                  <motion.div
-                    className="bg-gray-900/40 backdrop-blur-sm rounded-3xl overflow-hidden border border-gray-800/50 shadow-2xl"
-                    whileHover={{ 
-                      scale: 1.02,
-                      transition: { duration: 0.3, ease: "easeOut" }
-                    }}
-                  >
-                    <div className="grid md:grid-cols-2">
-                      {/* Left Content */}
-                      <div className="p-12 lg:p-16 flex flex-col justify-center">
-                        <div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-white mb-8" />
-                        
-                        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight whitespace-pre-line">
-                          {item.title}
-                        </h3>
-                        
-                        <p className="text-gray-300 text-base lg:text-lg leading-relaxed mb-10 max-w-lg">
-                          {item.description}
-                        </p>
-                        
-                        <div>
-                          {item.link ? (
-                            <Link href={item.link}>
+                  {item.link ? (
+                    <Link href={item.link}>
+                      <motion.div
+                        className="bg-gray-900/40 backdrop-blur-sm rounded-3xl overflow-hidden border border-gray-800/50 shadow-2xl cursor-pointer"
+                        whileHover={{ 
+                          scale: 1.02,
+                          transition: { duration: 0.3, ease: "easeOut" }
+                        }}
+                      >
+                        <div className="grid md:grid-cols-2">
+                          {/* Left Content */}
+                          <div className="p-12 lg:p-16 flex flex-col justify-center">
+                            <div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-white mb-8" />
+                            
+                            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight whitespace-pre-line">
+                              {item.title}
+                            </h3>
+                            
+                            <p className="text-gray-300 text-base lg:text-lg leading-relaxed mb-10 max-w-lg">
+                              {item.description}
+                            </p>
+                            
+                            <div>
                               <Button 
                                 variant="outline" 
                                 size="md"
                               >
                                 Learn More
                               </Button>
-                            </Link>
-                          ) : (
+                            </div>
+                          </div>
+
+                          {/* Right Image */}
+                          <div className="relative h-96 md:h-auto min-h-[500px]">
+                            <div 
+                              className="w-full h-full bg-cover bg-center rounded-r-3xl"
+                              style={{
+                                backgroundImage: `url('${item.image}')`
+                              }}
+                            >
+                              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-gray-900/20 rounded-r-3xl"></div>
+                            </div>
+                            
+                            <div className="absolute top-8 right-8 w-3 h-3 bg-white rounded-full opacity-60" />
+                          </div>
+                        </div>
+                      </motion.div>
+                    </Link>
+                  ) : (
+                    <motion.div
+                      className="bg-gray-900/40 backdrop-blur-sm rounded-3xl overflow-hidden border border-gray-800/50 shadow-2xl"
+                      whileHover={{ 
+                        scale: 1.02,
+                        transition: { duration: 0.3, ease: "easeOut" }
+                      }}
+                    >
+                      <div className="grid md:grid-cols-2">
+                        {/* Left Content */}
+                        <div className="p-12 lg:p-16 flex flex-col justify-center">
+                          <div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-white mb-8" />
+                          
+                          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight whitespace-pre-line">
+                            {item.title}
+                          </h3>
+                          
+                          <p className="text-gray-300 text-base lg:text-lg leading-relaxed mb-10 max-w-lg">
+                            {item.description}
+                          </p>
+                          
+                          <div>
                             <Button 
                               variant="outline" 
                               size="md"
                             >
                               Contact me
                             </Button>
-                          )}
+                          </div>
                         </div>
-                      </div>
 
-                      {/* Right Image */}
-                      <div className="relative h-96 md:h-auto min-h-[500px]">
-                        <div 
-                          className="w-full h-full bg-cover bg-center rounded-r-3xl"
-                          style={{
-                            backgroundImage: `url('${item.image}')`
-                          }}
-                        >
-                          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-gray-900/20 rounded-r-3xl"></div>
+                        {/* Right Image */}
+                        <div className="relative h-96 md:h-auto min-h-[500px]">
+                          <div 
+                            className="w-full h-full bg-cover bg-center rounded-r-3xl"
+                            style={{
+                              backgroundImage: `url('${item.image}')`
+                            }}
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-gray-900/20 rounded-r-3xl"></div>
+                          </div>
+                          
+                          <div className="absolute top-8 right-8 w-3 h-3 bg-white rounded-full opacity-60" />
                         </div>
-                        
-                        <div className="absolute top-8 right-8 w-3 h-3 bg-white rounded-full opacity-60" />
                       </div>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  )}
                 </div>
               </motion.div>
             );

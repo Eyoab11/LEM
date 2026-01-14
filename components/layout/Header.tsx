@@ -2,9 +2,12 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useState } from 'react';
 import { Button } from '../ui/Button';
 
 export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/#featured-work' },
@@ -24,7 +27,7 @@ export const Header = () => {
         {/* Empty space to maintain layout */}
         <div className="flex-shrink-0 w-12"></div>
 
-        {/* Navigation */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item, index) => (
             <motion.div
@@ -57,11 +60,35 @@ export const Header = () => {
           ))}
         </nav>
 
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden text-white p-2 z-50"
+          aria-label="Toggle menu"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            {isMenuOpen ? (
+              <path d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+
         {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
+          className="hidden md:block"
         >
           <Link href="/contact">
             <Button variant="outline" size="sm">
@@ -70,6 +97,36 @@ export const Header = () => {
           </Link>
         </motion.div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-lg border-t border-gray-800"
+        >
+          <nav className="flex flex-col px-6 py-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-300 hover:text-blue-400 py-3 border-b border-gray-800/50 transition-colors duration-300"
+              >
+                {item.name}
+              </Link>
+            ))}
+            <div className="mt-4">
+              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                <Button variant="outline" size="sm" className="w-full">
+                  Get in touch
+                </Button>
+              </Link>
+            </div>
+          </nav>
+        </motion.div>
+      )}
     </motion.header>
   );
 };

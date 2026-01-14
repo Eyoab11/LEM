@@ -17,23 +17,23 @@ export const LogoCarousel = () => {
   const infiniteLogos = [...logos, ...logos, ...logos];
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden px-16 py-12">
+    <section className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden px-8 md:px-16 py-12">
       {/* Left fade overlay */}
-      <div className="absolute left-0 top-0 bottom-0 w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
       
       {/* Right fade overlay */}
-      <div className="absolute right-0 top-0 bottom-0 w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
 
       {/* Carousel Container with margins */}
       <div className="w-full max-w-6xl mx-auto overflow-hidden">
         <div className="relative">
           <motion.div
-            className="flex items-center gap-12"
+            className="flex items-center gap-8 md:gap-12"
             animate={{
               x: [`0%`, `-${100 / 3}%`],
             }}
             transition={{
-              duration: 25,
+              duration: 15, // Faster on mobile (was 25)
               repeat: Infinity,
               ease: "linear",
             }}
@@ -48,7 +48,7 @@ export const LogoCarousel = () => {
                 <img
                   src={logo.url}
                   alt={logo.alt || logo.name}
-                  className="h-16 w-auto object-contain transition-all duration-300"
+                  className="h-10 md:h-16 w-auto object-contain transition-all duration-300" // Smaller on mobile
                 />
                 {/* Blue tint overlay on hover */}
                 <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/10 transition-all duration-300 rounded-lg" />

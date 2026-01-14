@@ -9,29 +9,29 @@ export const AboutUs = () => {
     {
       id: 1,
       number: "1",
-      title: "VISION",
-      description: "Every record begins with a clear vision. I shape raw ideas into music that feels intentional, timeless, and emotionally powerful.",
+      title: "GLOBAL REACH",
+      description: "Meaningful, cross-cultural stories with international resonance",
       position: "top-left"
     },
     {
       id: 2,
       number: "2",
-      title: "CRAFT",
-      description: "Details matter. From sound design to final polish, I approach every track with precision and care that makes the music shine.",
+      title: "FAMILY FRIENDLY",
+      description: "Positive, universally appealing characters and concepts",
       position: "top-right"
     },
     {
       id: 3,
       number: "3",
-      title: "TRUST",
-      description: "Collaboration only works with trust. I keep communication open, deadlines tight, and always deliver what I promise without compromise.",
+      title: "FRANCHISE DRIVEN",
+      description: "Built-in merchandising and ancillary opportunities with a long-term growth focus",
       position: "bottom-left"
     },
     {
       id: 4,
       number: "4",
-      title: "ENERGY",
-      description: "Music should move people. I focus on creating productions that carry energy—tracks that connect instantly and stay with listeners.",
+      title: "MUSIC FORWARD",
+      description: "A strong international track record in music and soundtrack production",
       position: "bottom-right"
     }
   ];

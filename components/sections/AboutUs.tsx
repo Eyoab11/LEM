@@ -93,7 +93,7 @@ export const AboutUs = () => {
         </motion.div>
 
         {/* Main Content Area - Mobile Responsive */}
-        <div className="relative flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0">
+        <div className="relative flex flex-col lg:block items-center justify-center gap-8 lg:gap-0">
           {/* Central Portrait */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -136,31 +136,29 @@ export const AboutUs = () => {
             ))}
           </div>
 
-          {/* Desktop: Absolute positioned cards */}
-          <div className="hidden lg:block relative w-full h-[500px]">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.id}
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.6 + index * 0.1, ease: "easeOut" }}
-                viewport={{ once: true }}
-                className={`w-72 absolute ${getPositionClasses(value.position)}`}
-              >
-                <div className="text-center">
-                  <div className="text-7xl font-bold text-gray-600/30 mb-1 leading-none">
-                    {value.number}
-                  </div>
-                  <h3 className="text-2xl font-black text-white mb-4 tracking-wide">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed text-center max-w-xs mx-auto">
-                    {value.description}
-                  </p>
+          {/* Desktop: Absolute positioned cards around centered image */}
+          {values.map((value, index) => (
+            <motion.div
+              key={value.id}
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 + index * 0.1, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className={`hidden lg:block w-72 ${getPositionClasses(value.position)}`}
+            >
+              <div className="text-center">
+                <div className="text-7xl font-bold text-gray-600/30 mb-1 leading-none">
+                  {value.number}
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <h3 className="text-2xl font-black text-white mb-4 tracking-wide">
+                  {value.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed text-center max-w-xs mx-auto">
+                  {value.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         <motion.div

@@ -3,7 +3,7 @@ import { ReactNode, useState } from 'react';
 
 interface ButtonProps {
   children: ReactNode;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'blue';
   size?: 'sm' | 'md' | 'lg';
   onClick?: () => void;
   className?: string;
@@ -23,7 +23,8 @@ export const Button = ({
   const variants = {
     primary: 'bg-white text-black hover:bg-gray-100',
     secondary: 'bg-transparent text-white border border-orange-500 hover:bg-orange-500 hover:text-black',
-    outline: 'bg-transparent text-white border border-orange-500 hover:border-orange-400'
+    outline: 'bg-transparent text-white border border-orange-500 hover:border-orange-400',
+    blue: 'bg-transparent text-white border border-blue-500 hover:bg-blue-500/10 hover:border-blue-400'
   };
   
   const sizes = {
@@ -47,7 +48,7 @@ export const Button = ({
           initial={{ scale: 1, opacity: 0.8 }}
           animate={{ scale: 3, opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="absolute inset-0 border-2 border-orange-500 rounded-full pointer-events-none"
+          className={`absolute inset-0 border-2 ${variant === 'blue' ? 'border-blue-500' : 'border-orange-500'} rounded-full pointer-events-none`}
           style={{ transformOrigin: 'center' }}
         />
       )}

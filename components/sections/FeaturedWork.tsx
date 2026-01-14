@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import Link from 'next/link';
 import { Button } from '../ui/Button';
 
 interface WorkItem {
@@ -10,14 +11,16 @@ interface WorkItem {
   description: string;
   image: string;
   color?: string;
+  link?: string;
 }
 
 const workItems: WorkItem[] = [
   {
     id: 1,
     title: "MIGHTY MORPHIN\nPOWER RANGERS",
-    description: "A franchise co-created under the leadership of Shuki Levy that became one of the highest-grossing children's properties of all time, generating $6.47 billion in licensed merchandise and captivating audiences in over 150 countries. This world-building blueprint remains foundational to LEM's creative model.",
-    image: "/power.jpg"
+    description: "A franchise co-created under the leadership of Shuki Levy that became one of the highest-grossing children's properties of all time, generating billions in licensed merchandise and captivating audiences in over 150 countries.",
+    image: "/power.jpg",
+    link: "/power-rangers"
   },
   {
     id: 2,
@@ -50,17 +53,17 @@ export const FeaturedWork = () => {
   return (
     <>
       {/* Section Header */}
-      <section id="featured-work" className="min-h-screen bg-black flex items-center justify-center px-8 py-12">
+      <section id="featured-work" className="bg-black px-8 pt-20 pb-8">
         <div className="max-w-7xl mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
             <motion.div 
-              className="w-16 h-0.5 bg-white mx-auto mb-8"
+              className="w-16 h-0.5 bg-gradient-to-r from-blue-500 via-white to-blue-500 mx-auto mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: 64 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -130,7 +133,7 @@ export const FeaturedWork = () => {
                     <div className="grid md:grid-cols-2">
                       {/* Left Content */}
                       <div className="p-12 lg:p-16 flex flex-col justify-center">
-                        <div className="w-12 h-0.5 bg-white mb-8" />
+                        <div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-white mb-8" />
                         
                         <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight whitespace-pre-line">
                           {item.title}
@@ -141,12 +144,23 @@ export const FeaturedWork = () => {
                         </p>
                         
                         <div>
-                          <Button 
-                            variant="outline" 
-                            size="md"
-                          >
-                            Contact me
-                          </Button>
+                          {item.link ? (
+                            <Link href={item.link}>
+                              <Button 
+                                variant="outline" 
+                                size="md"
+                              >
+                                Learn More
+                              </Button>
+                            </Link>
+                          ) : (
+                            <Button 
+                              variant="outline" 
+                              size="md"
+                            >
+                              Contact me
+                            </Button>
+                          )}
                         </div>
                       </div>
 

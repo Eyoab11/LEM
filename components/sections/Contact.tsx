@@ -64,7 +64,7 @@ export const Contact = () => {
       <div className="relative z-10 text-center">
         {/* Decorative line */}
         <motion.div 
-          className="w-16 h-0.5 bg-white mx-auto mb-8"
+          className="w-16 h-0.5 bg-gradient-to-r from-blue-500 via-white to-blue-500 mx-auto mb-8"
           initial={{ width: 0 }}
           whileInView={{ width: 64 }}
           transition={{ duration: 0.8, delay: 0.2 }}

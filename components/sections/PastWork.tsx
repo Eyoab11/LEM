@@ -62,7 +62,7 @@ export const PastWork = () => {
           <div className="text-left">
             {/* Decorative line */}
             <motion.div 
-              className="w-12 h-0.5 bg-white mb-8"
+              className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-white mb-8"
               style={{ opacity: titleOpacity }}
             />
             

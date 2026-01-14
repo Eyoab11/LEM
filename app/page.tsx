@@ -16,11 +16,11 @@ export default function Home() {
       <Header />
       <HeroSection />
       <LogoCarousel />
+      <AboutUs />
       <FeaturedWork />
       <ScrollText />
       <PastWork />
       <WorkGrid />
-      <AboutUs />
       <Statistics />
       <Contact />
       <Footer />

@@ -6,9 +6,9 @@ import { Button } from '../ui/Button';
 
 export const Header = () => {
   const navItems = [
-    { name: 'Services', href: '#featured-work' },
-    { name: 'About', href: '#about-us' },
-    { name: 'Work', href: '#past-work' },
+    { name: 'Services', href: '/#featured-work' },
+    { name: 'About', href: '/#about-us' },
+    { name: 'Work', href: '/#past-work' },
     { name: 'Contact', href: '/contact' }
   ];
 
@@ -21,11 +21,14 @@ export const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <img 
-            src="/levi.png" 
-            alt="Levi Logo" 
-            className="h-8 w-auto"
+        <Link href="/" className="flex-shrink-0">
+          <motion.img
+            src="/levi.png"
+            alt="Levy Eromo Media"
+            className="h-12 w-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           />
         </Link>
 
@@ -40,7 +43,7 @@ export const Header = () => {
             >
               <Link
                 href={item.href}
-                className="relative text-gray-300 hover:text-white transition-colors duration-300 group"
+                className="relative text-gray-300 hover:text-blue-400 transition-colors duration-300 group"
               >
                 <motion.span
                   className="inline-block"
@@ -55,8 +58,8 @@ export const Header = () => {
                 >
                   {item.name}
                 </motion.span>
-                {/* Underline that slides in from left */}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300" />
+                {/* Underline that slides in from left - blue gradient */}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 group-hover:w-full transition-all duration-300" />
               </Link>
             </motion.div>
           ))}

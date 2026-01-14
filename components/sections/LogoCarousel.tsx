@@ -4,10 +4,13 @@ import { motion } from 'framer-motion';
 
 export const LogoCarousel = () => {
   const logos = [
-    { name: 'Power Rangers', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR42rDDP4NmZ4WzEB0qkTT8W1jd1Uf5zz2V5g&s' },
-    { name: 'Spider-Man', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSueckjDhF3J-JuMa-jFT4EMH2oiQeerj2Nhg&s' },
-    { name: 'Digimon', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGAFUhfBH7CPGogd0pbdaVFGo3U-Ab6MdVhA&s' },
-    { name: 'Logo', url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSfaif-NkEFxzWe_m4ISEHATIYXMweOsh_Dw&s' },
+    { name: 'Power Rangers', url: '/powerrangers.png', alt: 'Power Rangers logo' },
+    { name: 'X-Men', url: '/xmen.png', alt: 'X-Men logo' },
+    { name: 'Spider-Man', url: '/spiiderman.png', alt: 'Spider-Man logo' },
+    { name: 'Inspector Gadget', url: '/inspectorgadget.png', alt: 'Inspector Gadget logo' },
+    { name: 'Super Mario Bros. Super Show', url: '/supershow.png', alt: 'Super Mario Bros. Super Show logo' },
+    { name: 'Rainbow Brite', url: '/rainbowbrite.png', alt: 'Rainbow Brite logo' },
+    { name: 'The Incredible Hulk', url: '/theincrediblehulk.png', alt: 'The Incredible Hulk logo' },
   ];
 
   // Triple the logos for seamless infinite scroll
@@ -39,14 +42,16 @@ export const LogoCarousel = () => {
             {infiniteLogos.map((logo, index) => (
               <motion.div
                 key={`${logo.name}-${index}`}
-                className="flex-shrink-0 opacity-50 hover:opacity-100 transition-opacity duration-300"
+                className="flex-shrink-0 opacity-70 hover:opacity-100 transition-all duration-300 relative group"
                 whileHover={{ scale: 1.1 }}
               >
                 <img
                   src={logo.url}
-                  alt={logo.name}
-                  className="h-16 w-auto object-contain grayscale transition-all duration-300"
+                  alt={logo.alt || logo.name}
+                  className="h-16 w-auto object-contain transition-all duration-300"
                 />
+                {/* Blue tint overlay on hover */}
+                <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/10 transition-all duration-300 rounded-lg" />
               </motion.div>
             ))}
           </motion.div>

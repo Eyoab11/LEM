@@ -5,9 +5,10 @@ import Link from 'next/link';
 
 export const Footer = () => {
   const navigationLinks = [
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Work', href: '#work' },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/#featured-work' },
+    { name: 'About', href: '/#about-us' },
+    { name: 'Work', href: '/#past-work' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -63,7 +64,7 @@ export const Footer = () => {
                 <li key={link.name}>
                   <Link 
                     href={link.href}
-                    className="text-gray-400 text-sm hover:text-white transition-colors duration-300"
+                    className="text-gray-400 text-sm hover:text-blue-400 transition-colors duration-300"
                   >
                     {link.name}
                   </Link>
@@ -87,7 +88,7 @@ export const Footer = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 text-sm hover:text-white transition-colors duration-300"
+                    className="text-gray-400 text-sm hover:text-blue-400 transition-colors duration-300"
                   >
                     {link.name}
                   </a>

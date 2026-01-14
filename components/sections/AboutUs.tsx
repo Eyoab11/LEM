@@ -64,7 +64,7 @@ export const AboutUs = () => {
         >
           {/* Decorative line */}
           <motion.div 
-            className="w-16 h-0.5 bg-white mx-auto mb-6"
+            className="w-16 h-0.5 bg-gradient-to-r from-blue-500 via-white to-blue-500 mx-auto mb-6"
             initial={{ width: 0 }}
             whileInView={{ width: 64 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -77,8 +77,19 @@ export const AboutUs = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            ABOUT US
+            About Levy Eromo Media
           </motion.h2>
+          
+          {/* Description paragraph */}
+          <motion.p
+            className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-4xl mx-auto mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Levy Eromo Media is a global, family-centric entertainment studio powered by world-class creative talent with a decades-long track record of building iconic franchises for children and families worldwide. With music at its core, LEM uniquely blends storytelling and chart-defining compositions to create emotionally resonant brands that travel across cultures and generations.
+          </motion.p>
         </motion.div>
 
         {/* Main Content Area - Reduced height */}
@@ -139,9 +150,9 @@ export const AboutUs = () => {
           viewport={{ once: true }}
           className="text-center mt-8"
         >
-          <Link href="/contact">
+          <Link href="/about">
             <Button variant="primary" size="lg">
-              Let's talk
+              Learn More
             </Button>
           </Link>
         </motion.div>

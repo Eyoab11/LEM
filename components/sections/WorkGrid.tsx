@@ -17,84 +17,84 @@ const workItems: WorkItem[] = [
     id: 1,
     title: "He-Man & The Masters Of The Universe",
     youtubeId: "7yeA7a0uS3A",
-    services: "Production, Mixing",
+    services: "",
     customThumbnail: "/heman.jpg"
   },
   {
     id: 2,
     title: "Inspector Gadget",
     youtubeId: "rIc13VjeAw8",
-    services: "Production, Vocal Recording, Mixing",
+    services: "",
     customThumbnail: "/inspectorgadget.jpg"
   },
   {
     id: 3,
     title: "X-Men",
     youtubeId: "sAkL2-vh2Sk",
-    services: "Production, Sound Design, Mastering",
+    services: "",
     customThumbnail: "/xmen.jpg"
   },
   {
     id: 4,
     title: "Rainbow Brite",
     youtubeId: "uQSTSxqIyCg",
-    services: "Beat Production, Mixing",
-    customThumbnail: "/rainbow-brite.jpg"
+    services: "",
+    customThumbnail: "/rainbowbrite.png"
   },
   {
     id: 5,
-    title: "Power Rangers: Mighty Morphin",
+    title: "Mighty Morphin Power Rangers",
     youtubeId: "nHalaFUqnTI",
-    services: "Production, Vocal Tuning, Mastering",
+    services: "",
     customThumbnail: "/powerrangers.jpg"
   },
   {
     id: 6,
-    title: "Spiderman",
+    title: "Spider-Man",
     youtubeId: "DZGN9fZvQhc",
-    services: "Production, Mixing, Mastering",
+    services: "",
     customThumbnail: "/spiderman.jpg"
   },
   {
     id: 7,
     title: "Digimon",
     youtubeId: "MJvpOrzcGbI",
-    services: "Production, Mixing",
+    services: "",
     customThumbnail: "/digimon.jpg"
   },
   {
     id: 8,
     title: "Heathcliff",
     youtubeId: "9LLb8EBU9nQ",
-    services: "Production, Mixing",
+    services: "",
     customThumbnail: "/heatcliff.jpg"
   },
   {
     id: 9,
     title: "Mysterious Cities of Gold",
     youtubeId: "_ycG-xe1uSM",
-    services: "Production, Mixing",
+    services: "",
     customThumbnail: "/MYSTERIOUSCITIESOFGOLD.jpg"
   },
   {
     id: 10,
-    title: "Rainbow Brite",
-    youtubeId: "Pp74T9b4Z40",
-    services: "Production, Mixing",
-    customThumbnail: "/rainbow-brite.jpg"
+    title: "M.A.S.K.",
+    youtubeId: "o2Z1yLO9C-Q",
+    services: "",
+    customThumbnail: "/mask.jpg"
   },
   {
     id: 11,
     title: "She-Ra",
     youtubeId: "wR65P73X5GI",
-    services: "Production, Mixing",
+    services: "",
     customThumbnail: "/she-ra.jpg"
   },
   {
     id: 12,
     title: "Ulysses 31",
     youtubeId: "OZ4c1X5ene8",
-    services: "Production, Mixing",
+    services: "",
     customThumbnail: "/ulysse.jpg"
   }
 ];
@@ -195,10 +195,12 @@ export const WorkGrid = () => {
                     </div>
                   </div>
                   
-                  {/* Services Text */}
-                  <p className="text-gray-400 text-sm tracking-wide">
-                    {item.services}
-                  </p>
+                  {/* Services Text - Hidden since services are empty */}
+                  {item.services && (
+                    <p className="text-gray-400 text-sm tracking-wide">
+                      {item.services}
+                    </p>
+                  )}
                 </div>
               </motion.div>
             ))}

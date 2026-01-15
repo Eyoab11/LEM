@@ -67,7 +67,7 @@ export default function PowerRangersPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-white mb-6" />
+            <div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-white mx-auto mb-6" />
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               As a producer, writer, and composer, Shuki played a crucial role in adapting the Japanese Super Sentai series into a uniquely American brand. His expertise in both music and television production proved invaluable as the franchise took shape under Haim Saban's leadership.
             </p>
@@ -87,7 +87,7 @@ export default function PowerRangersPage() {
               fill
               className="object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
               <p className="text-white text-sm md:text-base">
                 Shuki Levy and Haim Saban in their Studio City sound studio, 1986.
               </p>
@@ -130,7 +130,8 @@ export default function PowerRangersPage() {
             viewport={{ once: true }}
             className="bg-gray-900/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-800/50"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-white mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
               The Iconic Soundtrack
             </h2>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
@@ -164,8 +165,8 @@ export default function PowerRangersPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-white mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-white mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
               A Lasting Legacy
             </h2>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
@@ -185,10 +186,6 @@ export default function PowerRangersPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">
-              Discover More About Our Work
-            </h2>
-            
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link href="/contact">
                 <Button variant="primary" size="lg">

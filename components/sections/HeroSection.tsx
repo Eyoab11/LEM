@@ -42,23 +42,18 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-gray-300 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="text-gray-300 text-xl md:text-2xl lg:text-3xl mb-12 max-w-2xl mx-auto leading-relaxed font-bold tracking-wide"
         >
-          Global Connection, Infinite Imagination
+          GLOBAL CONNECTION, INFINITE IMAGINATION
         </motion.p>
 
+        {/* Blue Dividing Line */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, width: 0 }}
+          animate={{ opacity: 1, width: 64 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mb-12"
-        >
-          <Link href="/contact">
-            <Button variant="primary" size="lg">
-              Connect
-            </Button>
-          </Link>
-        </motion.div>
+          className="h-0.5 bg-gradient-to-r from-blue-500 via-white to-blue-500 mx-auto mb-12"
+        />
 
         {/* Additional Description */}
         <motion.p

@@ -27,7 +27,7 @@ const workItems: WorkItem[] = [
     id: 2,
     title: "SCALABLE IP\nPORTFOLIO",
     description: "Our content portfolio spans a diverse range of formats, including animated and live-action series designed for episodic storytelling, as well as branded interactive app content and short form content. Merchandising, licensing and ancillary opportunities are central to our IP development strategy, extending the impact of our productions across various markets, creating additional revenue streams and brand exposure.",
-    image: "/robot.png",
+    image: "/GGI2.jpeg",
     hideButton: true
   },
   {
@@ -50,14 +50,14 @@ export const FeaturedWork = () => {
   return (
     <>
       {/* Section Header */}
-      <section id="featured-work" className="bg-black px-8 pt-20 pb-8">
+      <section id="featured-work" className="bg-black px-8 pt-20 pb-4">
         <div className="max-w-7xl mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <motion.div 
               className="w-16 h-0.5 bg-gradient-to-r from-blue-500 via-white to-blue-500 mx-auto mb-6"

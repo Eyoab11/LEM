@@ -11,7 +11,7 @@ export const Header = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/#about-us' },
-    { name: 'Creative Projects', href: '/#past-work' },
+    { name: 'Projects', href: '/#past-work' },
     { name: 'Contact', href: '/contact' }
   ];
 
@@ -82,19 +82,8 @@ export const Header = () => {
           </svg>
         </button>
 
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="hidden md:block"
-        >
-          <Link href="/contact">
-            <Button variant="outline" size="sm">
-              Get in touch
-            </Button>
-          </Link>
-        </motion.div>
+        {/* CTA Button - Removed as requested */}
+        <div className="hidden md:block w-24"></div>
       </div>
 
       {/* Mobile Menu */}
@@ -119,7 +108,7 @@ export const Header = () => {
             <div className="mt-4">
               <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
                 <Button variant="outline" size="sm" className="w-full">
-                  Get in touch
+                  Contact
                 </Button>
               </Link>
             </div>

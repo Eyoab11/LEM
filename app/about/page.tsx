@@ -120,7 +120,7 @@ export default function AboutPage() {
           >
             <div className="w-16 h-0.5 bg-gradient-to-r from-blue-500 via-white to-blue-500 mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Legacy
+              Some Of Our Legacy
             </h2>
           </motion.div>
 

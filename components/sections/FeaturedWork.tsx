@@ -34,7 +34,8 @@ const workItems: WorkItem[] = [
     id: 3,
     title: "THE LEM IP LIBRARY —\n30+ ORIGINAL SERIES,\nFILMS & GAMES",
     description: "A robust catalog of over 30 fully developed IPs engineered for fast production, global distribution, and merchandising. Each property is designed with rights ownership and scalability at the core—allowing LEM to accelerate output at studio speed and capture the exponential upside of ancillary revenue.",
-    image: "https://upload.wikimedia.org/wikipedia/en/1/18/Benedict_Cumberbatch_as_Doctor_Strange.jpeg"
+    image: "https://upload.wikimedia.org/wikipedia/en/1/18/Benedict_Cumberbatch_as_Doctor_Strange.jpeg",
+    hideButton: true
   }
 ];
 

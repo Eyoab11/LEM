@@ -4,16 +4,23 @@ import { motion } from 'framer-motion';
 
 export const LogoCarousel = () => {
   const logos = [
-    { name: 'Power Rangers', url: '/powerrangers.png', alt: 'Power Rangers logo' },
+    { name: 'Cities of Gold', url: '/citiesofgold-removebg-preview.png', alt: 'Cities of Gold logo', scale: 1.4 },
+    { name: 'Digimon', url: '/digimon-removebg-preview.png', alt: 'Digimon logo', scale: 1.4 },
+    { name: 'He-Man', url: '/heman-removebg-preview.png', alt: 'He-Man logo', scale: 1.4 },
+    { name: 'She-Ra', url: '/shera-removebg-preview.png', alt: 'She-Ra logo' },
+    { name: 'Super Mario Bros. Super Show', url: '/supershow-removebg-preview (1).png', alt: 'Super Mario Bros. Super Show logo', scale: 1.4 },
+    { name: 'Turbo', url: '/turbo-removebg-preview.png', alt: 'Turbo logo' },
+    { name: 'Ulysses', url: '/ulysses-removebg-preview.png', alt: 'Ulysses logo' },
+    { name: 'VR Troopers', url: '/vtroopers-removebg-preview.png', alt: 'VR Troopers logo' },
+    { name: 'Zelda', url: '/zelda-removebg-preview.png', alt: 'Zelda logo' },
     { name: 'X-Men', url: '/xmen.png', alt: 'X-Men logo' },
-    { name: 'Spider-Man', url: '/spiiderman.png', alt: 'Spider-Man logo' },
-    { name: 'Inspector Gadget', url: '/inspectorgadget.png', alt: 'Inspector Gadget logo' },
-    { name: 'Super Mario Bros. Super Show', url: '/supershow.png', alt: 'Super Mario Bros. Super Show logo' },
+    { name: 'Spider-Man', url: '/spiiderman.png', alt: 'Spider-Man logo', scale: 1.4 },
+    { name: 'Inspector Gadget', url: '/inspectorgadget.png', alt: 'Inspector Gadget logo', scale: 1.4 },
     { name: 'Rainbow Brite', url: '/rainbowbrite.png', alt: 'Rainbow Brite logo' },
     { name: 'The Incredible Hulk', url: '/theincrediblehulk.png', alt: 'The Incredible Hulk logo' },
   ];
 
-  // Triple the logos for seamless infinite scroll
+  // Triple the logos for truly seamless infinite scroll
   const infiniteLogos = [...logos, ...logos, ...logos];
 
   return (
@@ -30,14 +37,16 @@ export const LogoCarousel = () => {
           <motion.div
             className="flex items-center gap-12 md:gap-16"
             animate={{
-              x: [`0%`, `-${100 / 3}%`],
+              x: [0, -((200 + 48) * logos.length)], // 200px minWidth + 48px gap (12*4)
             }}
             transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: "linear",
+              x: {
+                duration: 40,
+                repeat: Infinity,
+                ease: "linear",
+                repeatType: "loop",
+              },
             }}
-            style={{ width: '300%' }}
           >
             {infiniteLogos.map((logo, index) => (
               <motion.div
@@ -58,7 +67,8 @@ export const LogoCarousel = () => {
                   className="max-h-[120px] w-auto object-contain transition-all duration-300"
                   style={{
                     filter: 'brightness(1.3) contrast(1.2)',
-                    imageRendering: 'crisp-edges'
+                    imageRendering: 'crisp-edges',
+                    transform: logo.scale ? `scale(${logo.scale})` : 'scale(1)'
                   }}
                 />
                 {/* Blue tint overlay on hover */}

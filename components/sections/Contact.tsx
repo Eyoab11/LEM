@@ -10,7 +10,7 @@ export const Contact = () => {
       {/* Spotlight Effect Container */}
       <div className="absolute inset-0">
         {/* Floor reflection/glow */}
-        <div 
+        <div
           className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
           style={{
             width: '100%',
@@ -28,7 +28,7 @@ export const Contact = () => {
         />
 
         {/* Ambient glow in center */}
-        <div 
+        <div
           className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           style={{
             width: '600px',
@@ -45,7 +45,7 @@ export const Contact = () => {
         />
 
         {/* Subtle dust particles effect */}
-        <div 
+        <div
           className="absolute inset-0 opacity-30"
           style={{
             backgroundImage: `
@@ -63,7 +63,7 @@ export const Contact = () => {
       {/* Content */}
       <div className="relative z-10 text-center">
         {/* Decorative line */}
-        <motion.div 
+        <motion.div
           className="w-16 h-0.5 bg-gradient-to-r from-blue-500 via-white to-blue-500 mx-auto mb-8"
           initial={{ width: 0 }}
           whileInView={{ width: 64 }}
@@ -77,20 +77,19 @@ export const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wide mb-8"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wide mb-4"
         >
-          LET'S GET IN TOUCH
+          LET'S GET
         </motion.h2>
-        
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
-          className="text-gray-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed mb-12"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wide mb-12"
         >
-          Levy Eromo Media doesn't just develop shows—it builds universes designed to live everywhere and last for generations. Its original IP is crafted to move effortlessly across cultures, platforms, and formats, turning a single idea into a global story engine. With a fully scalable content ecosystem built for franchises, consumer products, and long‑term brand growth, LEM has created—and is actively creating—the next wave of global entertainment, where the future of the brand is truly without limits.
-        </motion.p>
+          IN TOUCH
+        </motion.h2>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

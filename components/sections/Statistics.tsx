@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 export const Statistics = () => {
-  const companyDescription = "Levy Eromo Media develops original entertainment properties that are built to work across cultures, platforms, and generations. Its content ecosystem is structured so each idea can grow into franchises, consumer products, and long-term brands, positioning LEM as a creator of globally scalable, future‑focused entertainment.";
+  const companyDescription = "Levy Eromo Media doesn't just develop shows—it builds universes designed to live everywhere and last for generations. Its original IP is crafted to move effortlessly across cultures, platforms, and formats, turning a single idea into a global story engine. With a fully scalable content ecosystem built for franchises, consumer products, and long‑term brand growth, LEM has created—and is actively creating—the next wave of global entertainment, where the future of the brand is truly without limits.";
 
   return (
     <section className="bg-black py-16 px-8">

@@ -19,7 +19,7 @@ const workItems: WorkItem[] = [
   {
     id: 1,
     title: "MIGHTY MORPHIN\nPOWER RANGERS",
-    description: "A franchise co-created under the leadership of Shuki Levy that became one of the highest-grossing children's properties of all time, generating billions in licensed merchandise and captivating audiences in over 150 countries.",
+    description: "A franchise co-created under the leadership of Levy Eromo Media managing partner Shuki Levy. MMPR became one of the highest-grossing children's properties of all time, generating billions in licensed merchandise and captivating audiences in over 150 countries.",
     image: "/power.jpg",
     link: "/power-rangers"
   },
@@ -32,9 +32,9 @@ const workItems: WorkItem[] = [
   },
   {
     id: 3,
-    title: "THE LEM IP LIBRARY —\n30+ ORIGINAL SERIES,\nFILMS & GAMES",
-    description: "A robust catalog of over 30 fully developed IPs engineered for fast production, global distribution, and merchandising. Each property is designed with rights ownership and scalability at the core—allowing LEM to accelerate output at studio speed and capture the exponential upside of ancillary revenue.",
-    image: "https://upload.wikimedia.org/wikipedia/en/1/18/Benedict_Cumberbatch_as_Doctor_Strange.jpeg",
+    title: "GLOBAL CONTENT\nECOSYSTEM",
+    description: "We build globally minded IP designed from inception to travel across borders, cultures, and platforms—connecting with families through universal themes, music, and storytelling. Our approach integrates content, consumer products, and ancillary extensions into a cohesive global ecosystem that resonates emotionally while scaling commercially worldwide.",
+    image: "/superhero.jpg",
     hideButton: true
   }
 ];

@@ -88,7 +88,7 @@ export const PastWork = () => {
               }}
               className="text-base md:text-lg text-gray-300 leading-relaxed transition-all duration-300 ease-out"
             >
-              Where legendary world-builders, visionary composers, and the creative force behind some of the most iconic global franchises unite to redefine animation for the next century. We don't follow the magic. We invent it. Welcome to the studio built by the creator whose work shaped the childhood of millions and launched one of the most successful live-action/animated franchises in history.
+              The seasoned team at Levy Eromo Media has collaborated on several iconic global franchises in family entertainment. United by a shared creative ambition and an unparalleled track record, this is a studio that doesn't chase trends—it creates enduring worlds that have shaped childhoods.
             </motion.p>
           </div>
         </div>

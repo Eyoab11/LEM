@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 export const Statistics = () => {
-  const companyDescription = "A bold new global studio founded by the creator of one of the most successful children's franchises in history, supported by a seasoned team with a proven track record in entertainment.";
+  const companyDescription = "Levy Eromo Media's original IP catalogue is designed to travel across cultures, platforms, and generations. With a scalable content ecosystem engineered for franchise, consumer products, and long-term brand expansion, LEM is creating the next wave of global entertainment—where the future is truly limitless.";
 
   return (
     <section className="bg-black py-16 px-8">

@@ -62,10 +62,10 @@ export const ContactForm = () => {
           className="text-center mb-8"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            LET'S GET IN TOUCH
+            CONTACT US
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-            Let's get in touch! Whether you're ready to start a project, have a question, or just want to connect, drop me a message below and I'll get back to you soon.
+            Connect with our team by filling out the form below.
           </p>
         </motion.div>
 
@@ -78,12 +78,7 @@ export const ContactForm = () => {
         >
           <div className="flex items-center gap-3 text-gray-300">
             <Mail className="w-5 h-5" />
-            <span>info@example.com</span>
-          </div>
-          <div className="hidden md:block w-px h-6 bg-gray-600"></div>
-          <div className="flex items-center gap-3 text-gray-300">
-            <Phone className="w-5 h-5" />
-            <span>(555) 123-4567</span>
+            <span>info@levyeromomedia.com</span>
           </div>
         </motion.div>
 

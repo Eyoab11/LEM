@@ -10,7 +10,6 @@ export const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/#featured-work' },
     { name: 'About', href: '/#about-us' },
     { name: 'Work', href: '/#past-work' },
     { name: 'Contact', href: '/contact' }

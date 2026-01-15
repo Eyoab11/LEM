@@ -84,7 +84,7 @@ export const ScrollText = () => {
             }}
             className="text-lg md:text-xl font-normal text-white tracking-wider transition-all duration-300 ease-out"
           >
-            AWARD-WINNING COMPOSER
+            PROVEN, WORLD-CLASS TRACK RECORD IN GLOBAL MEDIA PRODUCTION
           </motion.p>
 
           {/* Line 2 */}
@@ -96,7 +96,7 @@ export const ScrollText = () => {
             }}
             className="text-lg md:text-xl font-normal text-white tracking-wider transition-all duration-300 ease-out"
           >
-            SONGWRITER, RECORDING AND PERFORMING ARTIST
+            BILLIONS OF STREAMS ACROSS MUSIC-DRIVEN IP
           </motion.p>
 
           {/* Line 3 */}
@@ -108,7 +108,7 @@ export const ScrollText = () => {
             }}
             className="text-lg md:text-xl font-normal text-white tracking-wider transition-all duration-300 ease-out"
           >
-            15 GOLD AND PLATINUM RECORDS
+            ORIGINAL IP ENGINEERED FOR FRANCHISE EXPANSION
           </motion.p>
         </div>
       </div>

@@ -67,7 +67,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 1 }}
           className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto leading-relaxed"
         >
-          A bold new global studio founded by the creator of one of the most successful children's franchises in history, supported by a seasoned team with a proven track record in entertainment.
+          Levy Eromo Media’s original IP catalogue is designed to travel across cultures, platforms, and generations. With a scalable content ecosystem engineered for franchise, consumer products, and long-term brand expansion, LEM is creating the next wave of global entertainment—where the future is truly limitless.
         </motion.p>
       </div>
 

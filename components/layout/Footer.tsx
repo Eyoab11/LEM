@@ -6,7 +6,6 @@ import Link from 'next/link';
 export const Footer = () => {
   const navigationLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/#featured-work' },
     { name: 'About', href: '/#about-us' },
     { name: 'Work', href: '/#past-work' },
     { name: 'Contact', href: '/contact' },
@@ -33,9 +32,9 @@ export const Footer = () => {
             {/* Logo */}
             <div className="flex items-center mb-6">
               <img 
-                src="/levi.png" 
+                src="/lemm.png" 
                 alt="Levi Logo" 
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
             </div>
             

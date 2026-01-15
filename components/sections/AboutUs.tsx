@@ -39,13 +39,13 @@ export const AboutUs = () => {
   const getPositionClasses = (position: string) => {
     switch (position) {
       case 'top-left':
-        return 'lg:absolute lg:top-8 lg:left-8';
+        return 'lg:absolute lg:top-0 lg:left-8';
       case 'top-right':
-        return 'lg:absolute lg:top-8 lg:right-8';
+        return 'lg:absolute lg:top-0 lg:right-8';
       case 'bottom-left':
-        return 'lg:absolute lg:bottom-8 lg:left-8';
+        return 'lg:absolute lg:bottom-0 lg:left-8';
       case 'bottom-right':
-        return 'lg:absolute lg:bottom-8 lg:right-8';
+        return 'lg:absolute lg:bottom-0 lg:right-8';
       default:
         return '';
     }
@@ -88,7 +88,7 @@ export const AboutUs = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            Levy Eromo Media is a global, family-centric entertainment studio powered by world-class creative talent with a decades-long track record of building iconic franchises for children and families worldwide. With music at its core, LEM uniquely blends storytelling and chart-defining compositions to create emotionally resonant brands that travel across cultures and generations.
+            A bold new global studio founded by the creator of one of the most successful children's franchises in history, supported by a seasoned team with a proven track record in entertainment. Levy Eromo Media's original IP catalogue is designed to travel across cultures, platforms, and generations. With a scalable content ecosystem engineered for franchise, consumer products, and long-term brand expansion, LEM is creating the next wave of global entertainment—where the future is truly limitless.
           </motion.p>
         </motion.div>
 
@@ -129,7 +129,7 @@ export const AboutUs = () => {
                 <h3 className="text-xl font-black text-white mb-4 tracking-wide">
                   {value.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed text-center max-w-xs mx-auto">
+                <p className="text-gray-400 text-base leading-relaxed text-center max-w-xs mx-auto">
                   {value.description}
                 </p>
               </motion.div>
@@ -153,7 +153,7 @@ export const AboutUs = () => {
                 <h3 className="text-2xl font-black text-white mb-4 tracking-wide">
                   {value.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed text-center max-w-xs mx-auto">
+                <p className="text-gray-400 text-base leading-relaxed text-center max-w-xs mx-auto">
                   {value.description}
                 </p>
               </div>

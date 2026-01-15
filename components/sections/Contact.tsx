@@ -77,19 +77,20 @@ export const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wide mb-4"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wide mb-8"
         >
-          LET'S GET
+          LET'S GET IN TOUCH
         </motion.h2>
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wide mb-12"
+          className="text-gray-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed mb-12"
         >
-          IN TOUCH
-        </motion.h2>
+          Levy Eromo Media doesn't just develop shows—it builds universes designed to live everywhere and last for generations. Its original IP is crafted to move effortlessly across cultures, platforms, and formats, turning a single idea into a global story engine. With a fully scalable content ecosystem built for franchises, consumer products, and long‑term brand growth, LEM has created—and is actively creating—the next wave of global entertainment, where the future of the brand is truly without limits.
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

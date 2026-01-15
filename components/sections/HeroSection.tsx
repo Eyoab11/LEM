@@ -67,7 +67,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 1 }}
           className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto leading-relaxed"
         >
-          Levy Eromo Media’s original IP catalogue is designed to travel across cultures, platforms, and generations. With a scalable content ecosystem engineered for franchise, consumer products, and long-term brand expansion, LEM is creating the next wave of global entertainment—where the future is truly limitless.
+          Levy Eromo Media develops original entertainment properties that are built to work across cultures, platforms, and generations. Its content ecosystem is structured so each idea can grow into franchises, consumer products, and long-term brands, positioning LEM as a creator of globally scalable, future‑focused entertainment.
         </motion.p>
       </div>
 

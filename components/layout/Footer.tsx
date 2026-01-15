@@ -7,7 +7,7 @@ export const Footer = () => {
   const navigationLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/#about-us' },
-    { name: 'Work', href: '/#past-work' },
+    { name: 'Creative Projects', href: '/#past-work' },
     { name: 'Contact', href: '/contact' },
   ];
 

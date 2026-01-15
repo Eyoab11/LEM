@@ -88,7 +88,7 @@ export const AboutUs = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            A bold new global studio founded by the creator of one of the most successful children's franchises in history, supported by a seasoned team with a proven track record in entertainment. Levy Eromo Media's original IP catalogue is designed to travel across cultures, platforms, and generations. With a scalable content ecosystem engineered for franchise, consumer products, and long-term brand expansion, LEM is creating the next wave of global entertainment—where the future is truly limitless.
+            A visionary global studio led by the creator behind one of the most successful children's franchises in history, powered by a seasoned team with a proven record of building hit entertainment brands. Levy Eromo Media develops original IP engineered to resonate across cultures, platforms, and generations, turning every story into a scalable world. With a franchise‑ready content ecosystem built for consumer products and long‑term brand growth, LEM is defining the current and next wave of global entertainment—where the future of storytelling knows no limits.
           </motion.p>
         </motion.div>
 

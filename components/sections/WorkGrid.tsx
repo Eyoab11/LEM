@@ -38,7 +38,8 @@ const workItems: WorkItem[] = [
     id: 4,
     title: "Rainbow Brite",
     youtubeId: "uQSTSxqIyCg",
-    services: "Beat Production, Mixing"
+    services: "Beat Production, Mixing",
+    customThumbnail: "/rainbow-brite.jpg"
   },
   {
     id: 5,
@@ -53,6 +54,48 @@ const workItems: WorkItem[] = [
     youtubeId: "DZGN9fZvQhc",
     services: "Production, Mixing, Mastering",
     customThumbnail: "/spiderman.jpg"
+  },
+  {
+    id: 7,
+    title: "Digimon",
+    youtubeId: "MJvpOrzcGbI",
+    services: "Production, Mixing",
+    customThumbnail: "/digimon.jpg"
+  },
+  {
+    id: 8,
+    title: "Heathcliff",
+    youtubeId: "9LLb8EBU9nQ",
+    services: "Production, Mixing",
+    customThumbnail: "/heatcliff.jpg"
+  },
+  {
+    id: 9,
+    title: "Mysterious Cities of Gold",
+    youtubeId: "_ycG-xe1uSM",
+    services: "Production, Mixing",
+    customThumbnail: "/MYSTERIOUSCITIESOFGOLD.jpg"
+  },
+  {
+    id: 10,
+    title: "Rainbow Brite",
+    youtubeId: "Pp74T9b4Z40",
+    services: "Production, Mixing",
+    customThumbnail: "/rainbow-brite.jpg"
+  },
+  {
+    id: 11,
+    title: "She-Ra",
+    youtubeId: "wR65P73X5GI",
+    services: "Production, Mixing",
+    customThumbnail: "/she-ra.jpg"
+  },
+  {
+    id: 12,
+    title: "Ulysses 31",
+    youtubeId: "OZ4c1X5ene8",
+    services: "Production, Mixing",
+    customThumbnail: "/ulysse.jpg"
   }
 ];
 

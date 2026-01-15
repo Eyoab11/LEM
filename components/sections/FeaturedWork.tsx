@@ -12,6 +12,7 @@ interface WorkItem {
   image: string;
   color?: string;
   link?: string;
+  hideButton?: boolean;
 }
 
 const workItems: WorkItem[] = [
@@ -24,21 +25,16 @@ const workItems: WorkItem[] = [
   },
   {
     id: 2,
-    title: "THE LEM CREATIVE &\nMERCHANDISING\nENGINE",
-    description: "A proven production model that integrates storytelling, gaming, and consumer products into a unified revenue system. With deep ties to the gaming and merchandise industries, LEM's approach converts creative worlds into high-value global franchises capable of producing $20M+ in profits across three verticals—leading to projected $1.8-$2B exits within 3-5 years.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBVABnZBx92UcP99Z-kNDJl_GX0_MHEWcwg&s"
+    title: "SCALABLE IP\nPORTFOLIO",
+    description: "Our content portfolio spans a diverse range of formats, including animated and live-action series designed for episodic storytelling, as well as branded interactive app content and short form content. Merchandising, licensing and ancillary opportunities are central to our IP development strategy, extending the impact of our productions across various markets, creating additional revenue streams and brand exposure.",
+    image: "/robot.png",
+    hideButton: true
   },
   {
     id: 3,
     title: "THE LEM IP LIBRARY —\n30+ ORIGINAL SERIES,\nFILMS & GAMES",
     description: "A robust catalog of over 30 fully developed IPs engineered for fast production, global distribution, and merchandising. Each property is designed with rights ownership and scalability at the core—allowing LEM to accelerate output at studio speed and capture the exponential upside of ancillary revenue.",
     image: "https://upload.wikimedia.org/wikipedia/en/1/18/Benedict_Cumberbatch_as_Doctor_Strange.jpeg"
-  },
-  {
-    id: 4,
-    title: "SPIDER MAN",
-    description: "Shuki composed the theme for the X-Men animated series in 1997. That theme was recently featured in the blockbuster film Dr. Strange. Screenheart made note of the song choice, which has delighted fans globally. One of the coolest pieces of music used in Doctor Strange 2 is the crowd-pleasing 'X-Men '97 Theme' composed by Haim Saban and Shuki Levy for the animated X-Men series that ran from 1992 to 1997. Not only is the song extremely uptempo compared to some of the melancholic musical scores, it also plays directly to the nostalgia of fans of Marvel going back 25 years.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2PWbTZ3jArSfVutpHvdu4441fBWJLYocuvg&s"
   }
 ];
 
@@ -143,27 +139,29 @@ export const FeaturedWork = () => {
                           {item.description}
                         </p>
                         
-                        <div>
-                          {item.link ? (
-                            <Link href={item.link}>
-                              <Button 
-                                variant="outline" 
-                                size="md"
-                              >
-                                Learn More
-                              </Button>
-                            </Link>
-                          ) : (
-                            <Link href="/contact">
-                              <Button 
-                                variant="outline" 
-                                size="md"
-                              >
-                                Contact me
-                              </Button>
-                            </Link>
-                          )}
-                        </div>
+                        {!item.hideButton && (
+                          <div>
+                            {item.link ? (
+                              <Link href={item.link}>
+                                <Button 
+                                  variant="outline" 
+                                  size="md"
+                                >
+                                  Learn More
+                                </Button>
+                              </Link>
+                            ) : (
+                              <Link href="/contact">
+                                <Button 
+                                  variant="outline" 
+                                  size="md"
+                                >
+                                  Contact me
+                                </Button>
+                              </Link>
+                            )}
+                          </div>
+                        )}
                       </div>
 
                       {/* Right Image */}

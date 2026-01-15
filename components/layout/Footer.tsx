@@ -35,14 +35,13 @@ export const Footer = () => {
               <img 
                 src="/levi.png" 
                 alt="Levi Logo" 
-                className="h-8 w-auto"
+                className="h-12 w-auto"
               />
             </div>
             
             {/* Tagline */}
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
-              Your ideas deserve more than a demo.<br />
-              Let's turn them into records that last.
+              Global Connection. Infinite Imagination.
             </p>
             
             {/* Copyright */}

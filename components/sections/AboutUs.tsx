@@ -106,7 +106,7 @@ export const AboutUs = () => {
               <div 
                 className="w-full h-full bg-cover bg-center bg-gradient-to-b from-transparent to-black/20"
                 style={{
-                  backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR966p5PDMZiGo7QWtwpS0JK6trL6RG9c7KpA&s')`
+                  backgroundImage: `url('/camera.png')`
                 }}
               />
             </div>

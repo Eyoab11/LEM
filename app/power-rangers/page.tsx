@@ -79,13 +79,13 @@ export default function PowerRangersPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative w-full h-[400px] rounded-2xl overflow-hidden"
+            className="relative w-full h-[400px] rounded-2xl overflow-hidden bg-black"
           >
             <Image
-              src="/powerrangers.png"
+              src="/shuki2.avif"
               alt="Shuki Levy and Haim Saban in their Studio City sound studio, 1986"
               fill
-              className="object-cover"
+              className="object-contain"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
               <p className="text-white text-sm md:text-base">
@@ -106,6 +106,22 @@ export default function PowerRangersPage() {
             </p>
           </motion.div>
 
+          {/* Power Rangers Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative w-full h-[400px] rounded-2xl overflow-hidden bg-black"
+          >
+            <Image
+              src="/shuki1.avif"
+              alt="Power Rangers"
+              fill
+              className="object-contain"
+            />
+          </motion.div>
+
           {/* Music Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -123,6 +139,22 @@ export default function PowerRangersPage() {
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               Shuki had already established himself as a prolific composer in children's television, scoring shows like <span className="text-white">Inspector Gadget</span> and <span className="text-white">He-Man and the Masters of the Universe</span>. His ability to craft memorable, engaging music played a major role in making Power Rangers appealing to a young audience.
             </p>
+          </motion.div>
+
+          {/* Power Rangers Crew Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative w-full h-[400px] rounded-2xl overflow-hidden bg-black"
+          >
+            <Image
+              src="/shuki3.avif"
+              alt="The Power Rangers cast and crew"
+              fill
+              className="object-contain"
+            />
           </motion.div>
 
           {/* Legacy Section */}

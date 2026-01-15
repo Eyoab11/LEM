@@ -17,7 +17,7 @@ export const LogoCarousel = () => {
   const infiniteLogos = [...logos, ...logos, ...logos];
 
   return (
-    <section className="py-8 md:py-12 lg:min-h-screen flex items-center justify-center bg-black relative overflow-hidden px-8 md:px-16">
+    <section className="py-16 md:py-20 flex items-center justify-center bg-black relative overflow-hidden px-8 md:px-16">
       {/* Left fade overlay */}
       <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
       
@@ -25,15 +25,15 @@ export const LogoCarousel = () => {
       <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
 
       {/* Carousel Container with margins */}
-      <div className="w-full max-w-6xl mx-auto overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto overflow-hidden">
         <div className="relative">
           <motion.div
-            className="flex items-center gap-8 md:gap-12"
+            className="flex items-center gap-12 md:gap-16"
             animate={{
               x: [`0%`, `-${100 / 3}%`],
             }}
             transition={{
-              duration: 15, // Faster on mobile (was 25)
+              duration: 15,
               repeat: Infinity,
               ease: "linear",
             }}
@@ -42,13 +42,24 @@ export const LogoCarousel = () => {
             {infiniteLogos.map((logo, index) => (
               <motion.div
                 key={`${logo.name}-${index}`}
-                className="flex-shrink-0 opacity-70 hover:opacity-100 transition-all duration-300 relative group"
+                className="flex-shrink-0 opacity-90 hover:opacity-100 transition-all duration-300 relative group"
                 whileHover={{ scale: 1.1 }}
+                style={{ 
+                  minWidth: '200px',
+                  height: '120px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
               >
                 <img
                   src={logo.url}
                   alt={logo.alt || logo.name}
-                  className="h-10 md:h-16 w-auto object-contain transition-all duration-300" // Smaller on mobile
+                  className="max-h-[120px] w-auto object-contain transition-all duration-300"
+                  style={{
+                    filter: 'brightness(1.3) contrast(1.2)',
+                    imageRendering: 'crisp-edges'
+                  }}
                 />
                 {/* Blue tint overlay on hover */}
                 <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/10 transition-all duration-300 rounded-lg" />

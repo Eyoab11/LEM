@@ -99,7 +99,7 @@ export const Contact = () => {
         >
           <Link href="/contact">
             <Button variant="primary" size="lg">
-              Let's talk
+              Connect
             </Button>
           </Link>
         </motion.div>

@@ -44,7 +44,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-gray-300 text-xl md:text-2xl lg:text-3xl mb-12 max-w-2xl mx-auto leading-relaxed font-bold tracking-wide"
         >
-          GLOBAL CONNECTION, INFINITE IMAGINATION
+          GLOBAL CONNECTION<br />INFINITE IMAGINATION
         </motion.p>
 
         {/* Blue Dividing Line */}

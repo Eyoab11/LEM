@@ -13,7 +13,7 @@ export const Footer = () => {
 
   const socialLinks = [
     { name: 'Facebook', href: 'https://web.facebook.com/people/Levy-Eromo-Media/61569304960482/' },
-    { name: 'Twitter', href: 'https://x.com/LevyEromoMedia' },
+    { name: 'X', href: 'https://x.com/LevyEromoMedia' },
     { name: 'LinkedIn', href: 'https://www.linkedin.com/company/levy-eromo-media/' },
   ];
 

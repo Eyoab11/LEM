@@ -100,11 +100,11 @@ export const AboutUs = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative z-10 w-full max-w-sm lg:max-w-none"
+            className="relative z-10 w-full max-w-xs lg:max-w-none"
           >
-            <div className="w-full lg:w-80 h-[350px] lg:h-[450px] rounded-2xl overflow-hidden shadow-2xl border border-gray-800/30 mx-auto">
+            <div className="w-full lg:w-80 h-[400px] lg:h-[450px] rounded-2xl overflow-hidden shadow-2xl border border-gray-800/30 mx-auto">
               <div 
-                className="w-full h-full bg-cover bg-center bg-gradient-to-b from-transparent to-black/20"
+                className="w-full h-full bg-cover bg-top bg-gradient-to-b from-transparent to-black/20"
                 style={{
                   backgroundImage: `url('/Kids watching TV.png')`
                 }}

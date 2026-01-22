@@ -106,7 +106,7 @@ export const AboutUs = () => {
               <div 
                 className="w-full h-full bg-cover bg-center bg-gradient-to-b from-transparent to-black/20"
                 style={{
-                  backgroundImage: `url('/camera.png')`
+                  backgroundImage: `url('/Kids watching TV.png')`
                 }}
               />
             </div>
@@ -123,7 +123,7 @@ export const AboutUs = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-6xl font-bold text-gray-600/30 mb-1 leading-none">
+                <div className="text-6xl font-bold text-gray-400/60 mb-1 leading-none">
                   {value.number}
                 </div>
                 <h3 className="text-xl font-black text-white mb-4 tracking-wide">
@@ -147,7 +147,7 @@ export const AboutUs = () => {
               className={`hidden lg:block w-72 ${getPositionClasses(value.position)}`}
             >
               <div className="text-center">
-                <div className="text-7xl font-bold text-gray-600/30 mb-1 leading-none">
+                <div className="text-7xl font-bold text-gray-400/60 mb-1 leading-none">
                   {value.number}
                 </div>
                 <h3 className="text-2xl font-black text-white mb-4 tracking-wide">

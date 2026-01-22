@@ -170,7 +170,7 @@ export default function PowerRangersPage() {
               A Lasting Legacy
             </h2>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              Shuki's influence has remained deeply embedded in the series DNA. His work on the music and early storytelling laid the foundation for what would grow to become a global phenomenon, generating $9 billion in merchandise sales, television deals, and theatrical releases. Shuki Levy's creativity and Haim Saban's vision helped to propel Power Rangers into one of the most successful children's franchises of all time.
+              Shuki's influence has remained deeply embedded in the series DNA. His work on the music and early storytelling laid the foundation for what would grow to become a global phenomenon, generating billions in merchandise sales, television deals, and theatrical releases. Shuki Levy's creativity and Haim Saban's vision helped to propel Power Rangers into one of the most successful children's franchises of all time.
             </p>
           </motion.div>
 

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Mail, Phone } from 'lucide-react';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +10,8 @@ export const ContactForm = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -20,9 +21,32 @@ export const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -68,8 +92,6 @@ export const ContactForm = () => {
             Connect with our team by filling out the form below.
           </p>
         </motion.div>
-
-
 
         {/* Contact Form */}
         <motion.div
@@ -146,12 +168,38 @@ export const ContactForm = () => {
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-white/90 backdrop-blur-sm text-black font-medium py-4 rounded-full hover:bg-white transition-all duration-300 border border-white/20"
+                disabled={isSubmitting}
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                className={`w-full font-medium py-4 rounded-full transition-all duration-300 border border-white/20 ${
+                  isSubmitting 
+                    ? 'bg-gray-500 text-gray-300 cursor-not-allowed' 
+                    : 'bg-white/90 backdrop-blur-sm text-black hover:bg-white'
+                }`}
               >
-                Send message
+                {isSubmitting ? 'Sending...' : 'Send message'}
               </motion.button>
+
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-green-400 text-center p-4 bg-green-400/10 rounded-lg border border-green-400/20"
+                >
+                  Message sent successfully! We'll get back to you soon.
+                </motion.div>
+              )}
+
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-red-400 text-center p-4 bg-red-400/10 rounded-lg border border-red-400/20"
+                >
+                  Failed to send message. Please try again or contact us directly.
+                </motion.div>
+              )}
             </form>
           </div>
         </motion.div>

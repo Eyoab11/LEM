@@ -7,6 +7,8 @@ import { Header } from '../../components/layout/Header';
 import { Footer } from '../../components/layout/Footer';
 import { Button } from '../../components/ui/Button';
 
+// Note: Metadata is exported from layout.tsx for this page since this is a client component
+
 export default function AboutPage() {
   const capabilities = [
     "A global production team driven by creative and heartfelt storytelling, with a proven track record",

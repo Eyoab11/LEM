@@ -15,3 +15,21 @@ export interface SectionProps {
   children: React.ReactNode;
   className?: string;
 }
+
+// Re-export SEO types for convenience
+export type {
+  PageMetadata,
+  ProjectSEOData,
+  OrganizationSchema,
+  CreativeWorkSchema,
+  WebSiteSchema,
+  BreadcrumbSchema,
+  NavigationItem,
+  SitemapEntry,
+  WebVitalsMetrics,
+  SEOPerformanceReport,
+  MetadataGeneratorOptions,
+  DynamicMetadataParams,
+  ContentSEOData,
+  LocalBusinessSchema,
+} from "../lib/seo";

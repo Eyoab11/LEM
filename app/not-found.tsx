@@ -51,9 +51,9 @@ export default function NotFound() {
               </Button>
             </Link>
             
-            <Link href="/projects">
+            <Link href="/#past-work">
               <Button variant="outline" size="lg">
-                View Projects
+                View Our Work
               </Button>
             </Link>
             

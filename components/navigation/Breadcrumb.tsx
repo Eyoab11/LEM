@@ -96,9 +96,7 @@ export const generateBreadcrumbs = (pathname: string): BreadcrumbItem[] => {
       .join(' ');
     
     // Special cases for known routes
-    if (segment === 'projects') {
-      label = 'Projects';
-    } else if (segment === 'contact') {
+    if (segment === 'contact') {
       label = 'Contact';
     } else if (segment === 'about') {
       label = 'About';

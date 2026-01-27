@@ -25,15 +25,13 @@ describe('Sitemap Generation', () => {
     expect(urls).toContain('/');
     expect(urls).toContain('/about');
     expect(urls).toContain('/contact');
-    expect(urls).toContain('/projects');
   });
 
-  it('should include project pages in sitemap', () => {
+  it('should not include project pages in sitemap (projects are now sections on homepage)', () => {
     const entries = getAllSitemapEntries();
     const projectUrls = entries.filter(entry => entry.url.startsWith('/projects/'));
     
-    expect(projectUrls.length).toBeGreaterThan(0);
-    expect(projectUrls.some(entry => entry.url === '/projects/power-rangers')).toBe(true);
+    expect(projectUrls.length).toBe(0);
   });
 
   it('should generate valid XML sitemap', () => {
@@ -118,28 +116,28 @@ describe('Image Alt Text Validation', () => {
 
 describe('URL Structure Validation', () => {
   it('should validate good URL structure', () => {
-    const result = validateURLStructure('/projects/power-rangers');
+    const result = validateURLStructure('/about');
     
     expect(result.isValid).toBe(true);
     expect(result.score).toBeGreaterThan(80);
   });
 
   it('should detect uppercase letters in URL', () => {
-    const result = validateURLStructure('/Projects/Power-Rangers');
+    const result = validateURLStructure('/About');
     
     expect(result.isValid).toBe(false);
     expect(result.issues).toContain('Contains uppercase letters');
   });
 
   it('should detect underscores in URL', () => {
-    const result = validateURLStructure('/projects/power_rangers');
+    const result = validateURLStructure('/about_us');
     
     expect(result.isValid).toBe(false);
     expect(result.issues).toContain('Contains underscores');
   });
 
   it('should detect multiple consecutive hyphens', () => {
-    const result = validateURLStructure('/projects/power--rangers');
+    const result = validateURLStructure('/about--us');
     
     expect(result.isValid).toBe(false);
     expect(result.issues).toContain('Contains multiple consecutive hyphens');
@@ -148,8 +146,8 @@ describe('URL Structure Validation', () => {
 
 describe('Canonical URL Generation', () => {
   it('should generate proper canonical URLs', () => {
-    const canonical = generateCanonicalURL('/projects/power-rangers', 'https://example.com');
-    expect(canonical).toBe('https://example.com/projects/power-rangers');
+    const canonical = generateCanonicalURL('/about', 'https://example.com');
+    expect(canonical).toBe('https://example.com/about');
   });
 
   it('should handle root path correctly', () => {
@@ -158,12 +156,12 @@ describe('Canonical URL Generation', () => {
   });
 
   it('should remove trailing slashes', () => {
-    const canonical = generateCanonicalURL('/projects/', 'https://example.com');
-    expect(canonical).toBe('https://example.com/projects');
+    const canonical = generateCanonicalURL('/contact/', 'https://example.com');
+    expect(canonical).toBe('https://example.com/contact');
   });
 
   it('should add leading slash if missing', () => {
-    const canonical = generateCanonicalURL('projects/power-rangers', 'https://example.com');
-    expect(canonical).toBe('https://example.com/projects/power-rangers');
+    const canonical = generateCanonicalURL('contact', 'https://example.com');
+    expect(canonical).toBe('https://example.com/contact');
   });
 });

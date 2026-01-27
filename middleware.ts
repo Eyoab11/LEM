@@ -41,8 +41,6 @@ export default function middleware(request: NextRequest) {
     // Handle common redirects (example patterns)
     const redirects: Record<string, string> = {
       '/home': '/',
-      '/portfolio': '/projects',
-      '/work': '/projects',
       '/about-us': '/about',
       '/contact-us': '/contact',
     };
@@ -58,12 +56,12 @@ export default function middleware(request: NextRequest) {
       }
     }
 
-    // Handle old project URLs (example pattern)
-    if (pathname.startsWith('/project/')) {
+    // Handle old project URLs - redirect to home page projects section
+    if (pathname.startsWith('/project/') || pathname.startsWith('/projects/')) {
       try {
-        const slug = pathname.replace('/project/', '');
         const url = request.nextUrl.clone();
-        url.pathname = `/projects/${slug}`;
+        url.pathname = '/';
+        url.hash = '#past-work';
         return NextResponse.redirect(url, 301);
       } catch (redirectError) {
         console.error('[Middleware] Failed to handle project URL redirect:', redirectError);

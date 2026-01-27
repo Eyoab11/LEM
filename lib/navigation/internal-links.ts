@@ -14,12 +14,6 @@ export const INTERNAL_PAGES = {
     description: 'Professional animation and media production services',
     category: 'main'
   },
-  projects: {
-    href: '/projects',
-    title: 'Our Projects - Animation Portfolio',
-    description: 'Explore our creative portfolio of animation and media projects',
-    category: 'portfolio'
-  },
   contact: {
     href: '/contact',
     title: 'Contact Us - Get in Touch',
@@ -32,23 +26,11 @@ export const INTERNAL_PAGES = {
     description: 'Learn about Levy Eromo Media and our creative journey',
     category: 'main'
   },
-  powerRangers: {
-    href: '/projects/power-rangers',
-    title: 'Power Rangers - Iconic Television Production',
-    description: 'Behind the scenes of Mighty Morphin Power Rangers creation',
-    category: 'project'
-  },
-  inspectorGadget: {
-    href: '/projects/inspector-gadget',
-    title: 'Inspector Gadget - Animation Excellence',
-    description: 'Innovative animation techniques and musical compositions',
-    category: 'project'
-  },
-  heMan: {
-    href: '/projects/he-man',
-    title: 'He-Man - Masters of the Universe',
-    description: 'Legendary animation and unforgettable musical scores',
-    category: 'project'
+  pastWork: {
+    href: '/#past-work',
+    title: 'Our Work - Animation Portfolio',
+    description: 'Explore our creative portfolio of animation and media projects',
+    category: 'portfolio'
   }
 } as const;
 
@@ -58,35 +40,12 @@ export const getRelatedLinks = (currentPath: string): InternalLink[] => {
   
   // If on homepage, suggest main navigation
   if (currentPath === '/') {
-    related.push(INTERNAL_PAGES.projects, INTERNAL_PAGES.contact);
-  }
-  
-  // If on projects page, suggest individual projects
-  else if (currentPath === '/projects') {
-    related.push(
-      INTERNAL_PAGES.powerRangers,
-      INTERNAL_PAGES.inspectorGadget,
-      INTERNAL_PAGES.heMan,
-      INTERNAL_PAGES.contact
-    );
-  }
-  
-  // If on individual project page, suggest other projects and contact
-  else if (currentPath.startsWith('/projects/')) {
-    const currentProject = currentPath.split('/').pop();
-    
-    // Add other projects (excluding current one)
-    if (currentProject !== 'power-rangers') related.push(INTERNAL_PAGES.powerRangers);
-    if (currentProject !== 'inspector-gadget') related.push(INTERNAL_PAGES.inspectorGadget);
-    if (currentProject !== 'he-man') related.push(INTERNAL_PAGES.heMan);
-    
-    // Always suggest projects overview and contact
-    related.push(INTERNAL_PAGES.projects, INTERNAL_PAGES.contact);
+    related.push(INTERNAL_PAGES.pastWork, INTERNAL_PAGES.contact);
   }
   
   // If on contact page, suggest main pages
   else if (currentPath === '/contact') {
-    related.push(INTERNAL_PAGES.home, INTERNAL_PAGES.projects);
+    related.push(INTERNAL_PAGES.home, INTERNAL_PAGES.pastWork);
   }
   
   return related;
@@ -96,35 +55,16 @@ export const getRelatedLinks = (currentPath: string): InternalLink[] => {
 export const getContextualLinks = (context: 'animation' | 'television' | 'music' | 'portfolio'): InternalLink[] => {
   switch (context) {
     case 'animation':
-      return [
-        INTERNAL_PAGES.inspectorGadget,
-        INTERNAL_PAGES.heMan,
-        INTERNAL_PAGES.projects
-      ];
-    
     case 'television':
-      return [
-        INTERNAL_PAGES.powerRangers,
-        INTERNAL_PAGES.projects
-      ];
-    
     case 'music':
-      return [
-        INTERNAL_PAGES.powerRangers,
-        INTERNAL_PAGES.inspectorGadget,
-        INTERNAL_PAGES.heMan
-      ];
-    
     case 'portfolio':
       return [
-        INTERNAL_PAGES.projects,
-        INTERNAL_PAGES.powerRangers,
-        INTERNAL_PAGES.inspectorGadget,
-        INTERNAL_PAGES.heMan
+        INTERNAL_PAGES.pastWork,
+        INTERNAL_PAGES.contact
       ];
     
     default:
-      return [INTERNAL_PAGES.projects, INTERNAL_PAGES.contact];
+      return [INTERNAL_PAGES.pastWork, INTERNAL_PAGES.contact];
   }
 };
 

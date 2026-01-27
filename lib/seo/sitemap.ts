@@ -26,27 +26,13 @@ const staticPages: SitemapEntry[] = [
     changeFrequency: 'monthly',
     priority: 0.7,
   },
-  {
-    url: '/projects',
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.9,
-  },
 ];
 
-// Dynamic project pages - in a real app, this would come from a CMS or database
-const projectSlugs = ['power-rangers', 'inspector-gadget', 'he-man'];
-
 /**
- * Get all dynamic project pages
+ * Get all dynamic project pages (currently none - projects are sections on homepage)
  */
 export function getProjectPages(): SitemapEntry[] {
-  return projectSlugs.map((slug) => ({
-    url: `/projects/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
+  return [];
 }
 
 /**

@@ -6,8 +6,7 @@ import { describe, it, expect } from 'vitest';
 import { 
   generateBaseMetadata, 
   generatePageMetadata, 
-  validateMetadata,
-  generateProjectMetadata 
+  validateMetadata
 } from '@/lib/seo/metadata';
 
 describe('SEO Metadata Generation', () => {
@@ -33,22 +32,6 @@ describe('SEO Metadata Generation', () => {
     expect(metadata.title).toContain('Test Page');
     expect(metadata.description).toBe('This is a test page for SEO metadata generation');
     expect(metadata.alternates?.canonical).toContain('/test-page');
-  });
-
-  it('should generate project metadata with proper structure', () => {
-    const project = {
-      title: 'Animation Project',
-      description: 'A sample animation project for testing',
-      category: 'Animation',
-      tags: ['2D', 'Character Design'],
-      slug: 'animation-project'
-    };
-
-    const metadata = generateProjectMetadata(project);
-    
-    expect(metadata.title).toContain('Animation Project');
-    expect(metadata.description).toBe(project.description);
-    expect(metadata.alternates?.canonical).toContain('/projects/animation-project');
   });
 
   it('should validate metadata and identify issues', () => {

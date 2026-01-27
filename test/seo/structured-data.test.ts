@@ -45,7 +45,7 @@ describe('Structured Data Generation', () => {
       tags: ['2D', 'Character'],
       images: ['/test-image.jpg'],
       dateCreated: new Date('2024-01-01'),
-      url: '/projects/test-animation'
+      url: '/#past-work'
     };
 
     const schema = generateCreativeWorkSchema(project);
@@ -63,8 +63,8 @@ describe('Structured Data Generation', () => {
   it('should generate valid Breadcrumb schema', () => {
     const breadcrumbs = [
       { name: 'Home', url: '/' },
-      { name: 'Projects', url: '/projects' },
-      { name: 'Animation', url: '/projects/animation' }
+      { name: 'About', url: '/about' },
+      { name: 'Contact', url: '/contact' }
     ];
 
     const schema = generateBreadcrumbSchema(breadcrumbs);

@@ -71,40 +71,12 @@ export const contentUpdates: Record<string, ContentFreshness> = {
     updateFrequency: 'monthly',
     contentType: 'page'
   },
-  '/projects': {
-    lastUpdated: new Date().toISOString(),
-    createdAt: '2024-01-01T00:00:00Z',
-    version: '1.5.0',
-    updateFrequency: 'quarterly',
-    contentType: 'page'
-  },
   '/contact': {
     lastUpdated: new Date().toISOString(),
     createdAt: '2024-01-01T00:00:00Z',
     version: '1.3.0',
     updateFrequency: 'yearly',
     contentType: 'page'
-  },
-  '/projects/power-rangers': {
-    lastUpdated: '2024-12-01T00:00:00Z',
-    createdAt: '2024-01-01T00:00:00Z',
-    version: '1.2.0',
-    updateFrequency: 'yearly',
-    contentType: 'project'
-  },
-  '/projects/inspector-gadget': {
-    lastUpdated: '2024-11-15T00:00:00Z',
-    createdAt: '2024-01-01T00:00:00Z',
-    version: '1.1.0',
-    updateFrequency: 'yearly',
-    contentType: 'project'
-  },
-  '/projects/he-man': {
-    lastUpdated: '2024-10-30T00:00:00Z',
-    createdAt: '2024-01-01T00:00:00Z',
-    version: '1.0.0',
-    updateFrequency: 'yearly',
-    contentType: 'project'
   }
 };
 

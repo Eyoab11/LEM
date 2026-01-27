@@ -22,6 +22,19 @@ export {
   validateMetadata,
 } from "./metadata";
 
+// Social images utilities
+export {
+  defaultSocialImages,
+  projectSocialImages,
+  getSocialImages,
+  generateSocialImageUrls,
+  createDynamicSocialImage,
+  validateSocialImage,
+  generateSocialMetaTags,
+  socialImageGuidelines,
+} from "./social-images";
+export type { SocialImageConfig, SocialImageSet } from "./social-images";
+
 // Structured data utilities
 export {
   generateOrganizationSchema,

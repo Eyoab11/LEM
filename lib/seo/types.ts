@@ -166,6 +166,7 @@ export interface MetadataGeneratorOptions {
   canonical?: string;
   noIndex?: boolean;
   structuredData?: any[];
+  socialImageType?: 'default' | 'project' | 'article' | 'contact';
 }
 
 export interface DynamicMetadataParams {

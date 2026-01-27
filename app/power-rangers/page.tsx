@@ -6,8 +6,17 @@ import Image from 'next/image';
 import { Header } from '../../components/layout/Header';
 import { Footer } from '../../components/layout/Footer';
 import { Button } from '../../components/ui/Button';
+import { SocialShare, useSocialMeta } from '../../components/seo/SocialShare';
 
 export default function PowerRangersPage() {
+  // Add social meta tags dynamically
+  useSocialMeta({
+    title: 'Shuki Levy and the Creation of Mighty Morphin Power Rangers',
+    description: 'Discover how Shuki Levy helped create one of the most iconic children\'s franchises of all time, from the unforgettable theme song to the groundbreaking storytelling.',
+    url: '/power-rangers',
+    imageType: 'project',
+  });
+
   return (
     <main className="bg-black min-h-screen">
       <Header />
@@ -172,6 +181,23 @@ export default function PowerRangersPage() {
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               Shuki's influence has remained deeply embedded in the series DNA. His work on the music and early storytelling laid the foundation for what would grow to become a global phenomenon, generating billions in merchandise sales, television deals, and theatrical releases. Shuki Levy's creativity and Haim Saban's vision helped to propel Power Rangers into one of the most successful children's franchises of all time.
             </p>
+          </motion.div>
+
+          {/* Social Share Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            <SocialShare
+              title="Shuki Levy and the Creation of Mighty Morphin Power Rangers"
+              description="Discover how Shuki Levy helped create one of the most iconic children's franchises of all time."
+              url="/power-rangers"
+              imageType="project"
+              className="max-w-md"
+            />
           </motion.div>
 
         </div>

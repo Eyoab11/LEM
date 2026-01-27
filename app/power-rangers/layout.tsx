@@ -1,23 +1,25 @@
 import { Metadata } from 'next';
-import { generateProjectMetadata } from '@/lib/seo';
+import { generatePageMetadata } from '@/lib/seo';
 
-// Generate specific metadata for the Power Rangers project page
-export const metadata: Metadata = generateProjectMetadata({
-  title: 'POWER RANGERS',
-  description: 'Discover how Shuki Levy helped create Mighty Morphin Power Rangers, shaping its storytelling, music, and legacy into a global pop culture phenomenon.',
-  category: 'Television Production',
-  tags: [
+export const metadata: Metadata = generatePageMetadata({
+  title: 'Shuki Levy and the Creation of Mighty Morphin Power Rangers',
+  description: 'Discover how Shuki Levy helped create one of the most iconic children\'s franchises of all time, from the unforgettable theme song to the groundbreaking storytelling that defined Power Rangers.',
+  keywords: [
     'Power Rangers',
     'Shuki Levy',
     'Haim Saban',
+    'Mighty Morphin Power Rangers',
     'children\'s television',
-    'action series',
-    'theme music',
-    'Super Sentai adaptation',
-    'television production'
+    'animation',
+    'theme song',
+    'Go Go Power Rangers',
+    'Super Sentai',
+    'television production',
+    'music composition',
+    'entertainment history'
   ],
-  image: '/lemm.png',
-  slug: 'power-rangers'
+  canonical: '/power-rangers',
+  socialImageType: 'project',
 });
 
 export default function PowerRangersLayout({

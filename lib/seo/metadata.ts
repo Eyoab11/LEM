@@ -6,6 +6,7 @@
 import { Metadata } from "next";
 import { siteConfig } from "./config";
 import { MetadataGeneratorOptions, DynamicMetadataParams } from "./types";
+import { getSocialImages, generateSocialImageUrls, defaultSocialImages } from "./social-images";
 
 /**
  * Generates base metadata object for the root layout
@@ -13,6 +14,8 @@ import { MetadataGeneratorOptions, DynamicMetadataParams } from "./types";
  */
 export function generateBaseMetadata(): Metadata {
   const { defaultMetadata, openGraph, twitter, siteUrl, siteName } = siteConfig;
+  const socialImages = getSocialImages('default');
+  const ogImages = generateSocialImageUrls(socialImages.openGraph);
 
   return {
     metadataBase: new URL(siteUrl),
@@ -27,7 +30,7 @@ export function generateBaseMetadata(): Metadata {
     publisher: defaultMetadata.publisher,
     robots: defaultMetadata.robots,
     
-    // Open Graph
+    // Open Graph with proper social images
     openGraph: {
       type: openGraph.type,
       locale: openGraph.locale,
@@ -35,20 +38,17 @@ export function generateBaseMetadata(): Metadata {
       siteName: openGraph.siteName,
       title: defaultMetadata.defaultTitle,
       description: defaultMetadata.description,
-      images: openGraph.images.map(img => ({
-        ...img,
-        url: `${siteUrl}${img.url}`,
-      })),
+      images: ogImages,
     },
 
-    // Twitter
+    // Twitter with proper social images
     twitter: {
       card: twitter.card,
       site: twitter.site,
       creator: twitter.creator,
       title: defaultMetadata.defaultTitle,
       description: defaultMetadata.description,
-      images: openGraph.images.map(img => `${siteUrl}${img.url}`),
+      images: socialImages.twitter.map(img => img.startsWith('http') ? img : `${siteUrl}${img}`),
     },
 
     // Additional meta tags
@@ -83,9 +83,37 @@ export function generatePageMetadata(options: MetadataGeneratorOptions): Metadat
     image,
     canonical,
     noIndex = false,
+    socialImageType = 'default',
   } = options;
 
   const { siteUrl, defaultMetadata, openGraph, twitter } = siteConfig;
+  
+  // Get appropriate social images
+  const socialImages = getSocialImages(socialImageType);
+  let ogImages = generateSocialImageUrls(socialImages.openGraph);
+  let twitterImages = socialImages.twitter.map(img => img.startsWith('http') ? img : `${siteUrl}${img}`);
+  
+  // Override with custom image if provided
+  if (image) {
+    const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+    ogImages = [
+      {
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: title || defaultMetadata.defaultTitle,
+        type: 'image/jpeg',
+      },
+      {
+        url: imageUrl,
+        width: 800,
+        height: 600,
+        alt: title || defaultMetadata.defaultTitle,
+        type: 'image/jpeg',
+      },
+    ];
+    twitterImages = [imageUrl];
+  }
   
   // Merge keywords with defaults
   const allKeywords = [...defaultMetadata.keywords, ...keywords];
@@ -97,11 +125,6 @@ export function generatePageMetadata(options: MetadataGeneratorOptions): Metadat
   
   // Use provided description or default
   const metaDescription = description || defaultMetadata.description;
-  
-  // Generate image URL
-  const imageUrl = image 
-    ? `${siteUrl}${image}`
-    : `${siteUrl}${openGraph.images[0].url}`;
 
   const metadata: Metadata = {
     title: fullTitle,
@@ -127,23 +150,7 @@ export function generatePageMetadata(options: MetadataGeneratorOptions): Metadat
       siteName: openGraph.siteName,
       title: fullTitle,
       description: metaDescription,
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: title || defaultMetadata.defaultTitle,
-          type: 'image/jpeg',
-        },
-        // Add additional image sizes for better social media support
-        {
-          url: imageUrl,
-          width: 800,
-          height: 600,
-          alt: title || defaultMetadata.defaultTitle,
-          type: 'image/jpeg',
-        },
-      ],
+      images: ogImages,
     },
 
     // Twitter with enhanced card support
@@ -153,7 +160,7 @@ export function generatePageMetadata(options: MetadataGeneratorOptions): Metadat
       creator: twitter.creator,
       title: fullTitle,
       description: metaDescription,
-      images: [imageUrl],
+      images: twitterImages,
     },
 
     // Additional social media and SEO tags

@@ -21,8 +21,8 @@ export const metadata: Metadata = generatePageMetadata({
     'animation quote',
     'media production consultation'
   ],
-  image: '/lemm.png',
   canonical: '/contact',
+  socialImageType: 'contact',
 });
 
 export default function Contact() {

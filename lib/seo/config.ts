@@ -72,9 +72,15 @@ export const siteConfig = {
     siteName: "Levy Eromo Media",
     images: [
       {
-        url: "/og-image.jpg", // Will need to create this
+        url: "/social/og-default.jpg",
         width: 1200,
         height: 630,
+        alt: "Levy Eromo Media - Professional Animation & Media Production",
+      },
+      {
+        url: "/social/og-square.jpg",
+        width: 800,
+        height: 800,
         alt: "Levy Eromo Media - Professional Animation & Media Production",
       },
     ],

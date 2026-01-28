@@ -1,154 +1,87 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { generateSocialImageConfig, generateSocialImageHTML } from '@/lib/seo/social-image-generator';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     
     const title = searchParams.get('title') || 'Levy Eromo Media';
-    const subtitle = searchParams.get('subtitle') || '';
-    const platform = (searchParams.get('platform') || 'og') as 'openGraph' | 'twitter' | 'linkedin';
+    const platform = searchParams.get('platform') || 'og';
     const category = searchParams.get('category') || '';
     
-    // Map platform parameter to internal format
-    const platformMap = {
-      'og': 'openGraph' as const,
-      'twitter': 'twitter' as const,
-      'linkedin': 'linkedin' as const,
-    };
+    // Map platform and category to existing social images
+    let imagePath = '/social/og-default.jpg';
     
-    const mappedPlatform = platformMap[platform as keyof typeof platformMap] || 'openGraph';
+    if (category) {
+      switch (category.toLowerCase()) {
+        case 'power-rangers':
+          imagePath = '/social/projects/power-rangers-og.jpg';
+          break;
+        case 'animation':
+          imagePath = '/social/projects/animation-og.jpg';
+          break;
+        case 'contact':
+          imagePath = '/social/contact-og.jpg';
+          break;
+        case 'blog':
+          imagePath = '/social/blog-og.jpg';
+          break;
+        default:
+          imagePath = '/social/og-default.jpg';
+      }
+    }
     
-    // Generate image configuration
-    const config = generateSocialImageConfig({
-      title,
-      subtitle: subtitle || undefined,
-      platform: mappedPlatform,
-      category: category || undefined,
-    });
+    // Platform-specific images
+    switch (platform) {
+      case 'twitter':
+        imagePath = '/social/twitter-card.jpg';
+        break;
+      case 'linkedin':
+        imagePath = '/social/linkedin-banner.jpg';
+        break;
+      case 'facebook':
+        imagePath = '/social/facebook-cover.jpg';
+        break;
+    }
     
-    // Generate HTML for the image
-    const html = generateSocialImageHTML(config);
-    
-    // In a production environment, you would use a service like:
-    // - Puppeteer to render HTML to image
-    // - Canvas API to draw the image
-    // - External service like Bannerbear, Placid, or similar
-    
-    // For now, return the HTML that could be rendered to an image
-    const fullHTML = `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="utf-8">
-          <style>
-            body { margin: 0; padding: 0; }
-          </style>
-        </head>
-        <body>
-          ${html}
-        </body>
-      </html>
-    `;
-    
-    // Return HTML response for now (in production, this would return an image)
-    return new NextResponse(fullHTML, {
-      headers: {
-        'Content-Type': 'text/html',
-        'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
-      },
-    });
+    try {
+      // Try to read the specific image file
+      const publicPath = join(process.cwd(), 'public', imagePath);
+      const imageBuffer = await readFile(publicPath);
+      
+      // Determine content type
+      const contentType = imagePath.endsWith('.png') ? 'image/png' : 'image/jpeg';
+      
+      return new NextResponse(imageBuffer, {
+        headers: {
+          'Content-Type': contentType,
+          'Cache-Control': 'public, max-age=86400', // Cache for 24 hours
+          'Content-Length': imageBuffer.length.toString(),
+        },
+      });
+      
+    } catch (fileError) {
+      // Fallback to default image if specific image not found
+      const fallbackPath = join(process.cwd(), 'public/social/og-default.jpg');
+      const fallbackBuffer = await readFile(fallbackPath);
+      
+      return new NextResponse(fallbackBuffer, {
+        headers: {
+          'Content-Type': 'image/jpeg',
+          'Cache-Control': 'public, max-age=86400',
+          'Content-Length': fallbackBuffer.length.toString(),
+        },
+      });
+    }
     
   } catch (error) {
-    console.error('Error generating social image:', error);
+    console.error('Error serving social image:', error);
     
+    // Return a simple error response
     return NextResponse.json(
-      { error: 'Failed to generate social image' },
+      { error: 'Failed to serve social image' },
       { status: 500 }
     );
   }
 }
-
-// Example implementation with image generation (commented out)
-/*
-import puppeteer from 'puppeteer';
-
-export async function GET(request: NextRequest) {
-  try {
-    const { searchParams } = new URL(request.url);
-    
-    const title = searchParams.get('title') || 'Levy Eromo Media';
-    const subtitle = searchParams.get('subtitle') || '';
-    const platform = (searchParams.get('platform') || 'og') as 'openGraph' | 'twitter' | 'linkedin';
-    const category = searchParams.get('category') || '';
-    
-    const platformMap = {
-      'og': 'openGraph' as const,
-      'twitter': 'twitter' as const,
-      'linkedin': 'linkedin' as const,
-    };
-    
-    const mappedPlatform = platformMap[platform as keyof typeof platformMap] || 'openGraph';
-    
-    const config = generateSocialImageConfig({
-      title,
-      subtitle: subtitle || undefined,
-      platform: mappedPlatform,
-      category: category || undefined,
-    });
-    
-    const html = generateSocialImageHTML(config);
-    
-    // Launch Puppeteer
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    });
-    
-    const page = await browser.newPage();
-    
-    // Set viewport to match image dimensions
-    await page.setViewport({
-      width: config.width,
-      height: config.height,
-      deviceScaleFactor: 1,
-    });
-    
-    // Set HTML content
-    await page.setContent(`
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="utf-8">
-          <style>body { margin: 0; padding: 0; }</style>
-        </head>
-        <body>${html}</body>
-      </html>
-    `);
-    
-    // Take screenshot
-    const screenshot = await page.screenshot({
-      type: 'jpeg',
-      quality: 90,
-      fullPage: true,
-    });
-    
-    await browser.close();
-    
-    return new NextResponse(screenshot, {
-      headers: {
-        'Content-Type': 'image/jpeg',
-        'Cache-Control': 'public, max-age=86400', // Cache for 24 hours
-      },
-    });
-    
-  } catch (error) {
-    console.error('Error generating social image:', error);
-    
-    return NextResponse.json(
-      { error: 'Failed to generate social image' },
-      { status: 500 }
-    );
-  }
-}
-*/

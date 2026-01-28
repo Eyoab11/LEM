@@ -8,6 +8,7 @@ import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
 import { ErrorBoundary } from "@/components/error/ErrorBoundary";
 import { ScrollDepthTracker } from "@/components/analytics/ScrollDepthTracker";
 import { CoreWebVitalsTracker } from "@/components/analytics/CoreWebVitalsTracker";
+import { LinkTracker } from "@/components/analytics/LinkTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,6 +56,9 @@ export default async function RootLayout({
               </ErrorBoundary>
               <ErrorBoundary fallback={null}>
                 <CoreWebVitalsTracker />
+              </ErrorBoundary>
+              <ErrorBoundary fallback={null}>
+                <LinkTracker />
               </ErrorBoundary>
               {children}
             </AnalyticsProvider>

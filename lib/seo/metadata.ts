@@ -57,7 +57,7 @@ export function generateBaseMetadata(): Metadata {
       'color-scheme': 'light dark',
     },
 
-    // Icons
+    // Icons (separate from social images)
     icons: {
       icon: '/lemm.png',
       shortcut: '/lemm.png',

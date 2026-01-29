@@ -14,8 +14,24 @@ import { getSocialImages, generateSocialImageUrls, defaultSocialImages } from ".
  */
 export function generateBaseMetadata(): Metadata {
   const { defaultMetadata, openGraph, twitter, siteUrl, siteName } = siteConfig;
-  const socialImages = getSocialImages('default');
-  const ogImages = generateSocialImageUrls(socialImages.openGraph);
+  
+  // Use absolute URLs to ensure they work correctly
+  const ogImages = [
+    {
+      url: `${siteUrl}/social/og-default.jpg`,
+      width: 1200,
+      height: 630,
+      alt: defaultMetadata.defaultTitle,
+      type: 'image/jpeg',
+    },
+    {
+      url: `${siteUrl}/social/og-square.jpg`,
+      width: 800,
+      height: 800,
+      alt: defaultMetadata.defaultTitle,
+      type: 'image/jpeg',
+    },
+  ];
 
   return {
     metadataBase: new URL(siteUrl),
@@ -48,7 +64,7 @@ export function generateBaseMetadata(): Metadata {
       creator: twitter.creator,
       title: defaultMetadata.defaultTitle,
       description: defaultMetadata.description,
-      images: socialImages.twitter.map(img => img.startsWith('http') ? img : `${siteUrl}${img}`),
+      images: [`${siteUrl}/social/twitter-card.jpg`],
     },
 
     // Additional meta tags

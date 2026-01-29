@@ -29,7 +29,7 @@ export const metadata: Metadata = generatePageMetadata({
     'global storytelling',
     'Levy Eromo Media'
   ],
-  image: '/lemm.png',
+  image: '/social/og-default.jpg',
   canonical: '/',
 });
 

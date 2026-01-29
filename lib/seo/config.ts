@@ -5,7 +5,7 @@
 
 export const siteConfig = {
   siteName: "Levy Eromo Media",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://levyeromedia.com",
+  siteUrl: "https://www.levyeromomedia.com",
   description: "Where legendary world-builders unite to redefine animation for the next century",
   logo: "/lemm.png",
   

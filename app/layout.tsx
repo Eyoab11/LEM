@@ -22,7 +22,11 @@ const geistMono = Geist_Mono({
 
 // Generate comprehensive metadata using the integrated SEO system
 const metadataResult = await generateSafeMetadata();
-export const metadata: Metadata = metadataResult.data || {};
+export const metadata: Metadata = {
+  ...metadataResult.data,
+  // Override title to remove template since generatePageMetadata handles it
+  title: 'Levy Eromo Media - Professional Animation & Media Production',
+};
 
 export default async function RootLayout({
   children,

@@ -134,10 +134,13 @@ export function generatePageMetadata(options: MetadataGeneratorOptions): Metadat
   // Merge keywords with defaults
   const allKeywords = [...defaultMetadata.keywords, ...keywords];
   
-  // Generate full title
+  // Generate title - use full title with company name for consistency
   const fullTitle = title 
     ? `${title} | ${siteConfig.siteName}`
     : defaultMetadata.defaultTitle;
+  
+  // For Open Graph and Twitter, use the same full title
+  const fullTitleWithCompany = fullTitle;
   
   // Use provided description or default
   const metaDescription = description || defaultMetadata.description;
@@ -164,7 +167,7 @@ export function generatePageMetadata(options: MetadataGeneratorOptions): Metadat
       locale: openGraph.locale,
       url: canonical ? `${siteUrl}${canonical}` : siteUrl,
       siteName: openGraph.siteName,
-      title: fullTitle,
+      title: fullTitleWithCompany,
       description: metaDescription,
       images: ogImages,
     },
@@ -174,7 +177,7 @@ export function generatePageMetadata(options: MetadataGeneratorOptions): Metadat
       card: twitter.card,
       site: twitter.site,
       creator: twitter.creator,
-      title: fullTitle,
+      title: fullTitleWithCompany,
       description: metaDescription,
       images: twitterImages,
     },

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Shuki Levy and the Creation of Mighty Morphin Power Rangers',
+  title: 'POWER RANGERS',
   description: 'Discover how Shuki Levy helped create one of the most iconic children\'s franchises of all time, from the unforgettable theme song to the groundbreaking storytelling that defined Power Rangers.',
   keywords: [
     'Power Rangers',

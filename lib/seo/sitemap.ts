@@ -21,6 +21,24 @@ const staticPages: SitemapEntry[] = [
     priority: 0.8,
   },
   {
+    url: '/team',
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    url: '/media/brochure',
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  },
+  {
+    url: '/media/presentations',
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  },
+  {
     url: '/contact',
     lastModified: new Date(),
     changeFrequency: 'monthly',

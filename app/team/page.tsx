@@ -77,10 +77,10 @@ export default function TeamPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://i.discogs.com/cLi1LO9oUn9Fo-HW2iv3YMlvqlnOCDwCliqLKaKqIzI/rs:fit/g:sm/q:90/h:232/w:298/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTM0ODY2/OS0xMjk0OTM0OTQy/LnBuZw.jpeg"
+            src="/shuki-piano.jpg"
             alt="Shuki Levy at piano"
             fill
-            className="object-cover object-[75%_center] md:object-center"
+            className="object-cover object-[75%_20%] md:object-[center_20%]"
             priority
           />
           {/* Dark Overlay for better text readability */}

@@ -13,7 +13,7 @@ const teamMembers = [
     role: 'Co-Founder & Managing Partner',
     bio: 'Legendary composer and producer, record-holder for TV theme songs, co-creator of Power Rangers, leading Global Family Entertainment.',
     gradient: 'from-blue-500 to-cyan-500',
-    image: '/shuki.png'
+    image: '/shuki.jpg.jpeg'
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const teamMembers = [
     role: 'Co-Founder & Managing Partner',
     bio: 'Writer and Storyteller of Family Entertainment in the field of Animation.',
     gradient: 'from-purple-500 to-pink-500',
-    image: '/tori.png'
+    image: '/tori.jpg.jpeg'
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const teamMembers = [
     role: 'Advisory Partner',
     bio: 'International Business Strategist, specializing in start-ups and developing companies into global Brands.',
     gradient: 'from-emerald-500 to-teal-500',
-    image: '/fraser.png'
+    image: '/fraser.jpg.jpeg'
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const teamMembers = [
     role: 'Creative Executive',
     bio: 'Award-winning children\'s content creator, showrunner of Mayta the Brown Bear.',
     gradient: 'from-orange-500 to-red-500',
-    image: '/bryan.png'
+    image: '/bryan.jpg.jpeg'
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const teamMembers = [
     role: 'Post-Production Specialist',
     bio: 'Emmy-nominated editor, expert in narrative flow and comedy formats, shaping family Entertainment.',
     gradient: 'from-violet-500 to-purple-500',
-    image: '/angel.png'
+    image: '/angel.jpg.jpeg'
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ const teamMembers = [
     role: 'Managing Partner',
     bio: 'Entrepreneur and Investor specializing in Family Entertainment through Animation.',
     gradient: 'from-indigo-500 to-blue-500',
-    image: '/erdolo.png'
+    image: '/erdolo.jpg.jpeg'
   },
   {
     id: 7,
@@ -61,7 +61,7 @@ const teamMembers = [
     role: 'Partner, Eromo Ventures',
     bio: 'Entrepreneur and Investor in Family Entertainment with a specialty of integrating AI in Healthcare.',
     gradient: 'from-cyan-500 to-blue-500',
-    image: '/ersno.png'
+    image: '/ersno.jpg.jpeg'
   }
 ];
 
@@ -173,7 +173,7 @@ export default function TeamPage() {
                         src={member.image}
                         alt={member.name}
                         fill
-                        className={`object-cover ${member.name === 'Fraser M. K. Tennant' ? 'object-[center_10%]' : ''}`}
+                        className="object-cover"
                       />
                     </div>
                   ) : (
@@ -246,7 +246,7 @@ export default function TeamPage() {
                           src={selectedMember.image}
                           alt={selectedMember.name}
                           fill
-                          className={`object-cover ${selectedMember.name === 'Fraser M. K. Tennant' ? 'object-[center_10%]' : ''}`}
+                          className="object-cover"
                         />
                       </div>
                     ) : (

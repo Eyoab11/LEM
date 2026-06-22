@@ -58,7 +58,7 @@ export function PresentationsPageClient() {
                   </div>
                 ) : (
                   <iframe
-                    src="https://drive.google.com/file/d/1UhNbIegiu2z5DwhTQA92C7BHZjjvIwBH/preview"
+                    src="https://drive.google.com/file/d/1UhNbIegiu2z5DwhTQA92C7BHZjjvIwBH/preview?autoplay=1"
                     className="w-full h-full rounded-xl"
                     allow="autoplay"
                     allowFullScreen
@@ -97,7 +97,7 @@ export function PresentationsPageClient() {
                   </div>
                 ) : (
                   <iframe
-                    src="https://drive.google.com/file/d/1vaqs9vuIsr9YB2iAQWE7Fdy2iI3SJrkP/preview"
+                    src="https://drive.google.com/file/d/1vaqs9vuIsr9YB2iAQWE7Fdy2iI3SJrkP/preview?autoplay=1"
                     className="w-full h-full rounded-xl"
                     allow="autoplay"
                     allowFullScreen

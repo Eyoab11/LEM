@@ -58,7 +58,7 @@ export function PresentationsPageClient() {
                   </div>
                 ) : (
                   <iframe
-                    src="https://drive.google.com/file/d/1ky7UsrhzdameSHHS9Sf32Cl7yeeLGX3b/preview?autoplay=1"
+                    src="https://drive.google.com/file/d/1UhNbIegiu2z5DwhTQA92C7BHZjjvIwBH/preview?autoplay=1"
                     className="w-full h-full rounded-xl"
                     allow="autoplay"
                     allowFullScreen

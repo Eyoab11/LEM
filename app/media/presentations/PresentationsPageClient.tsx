@@ -58,11 +58,11 @@ export function PresentationsPageClient() {
                   </div>
                 ) : (
                   <iframe
-                    src="https://drive.google.com/file/d/1UhNbIegiu2z5DwhTQA92C7BHZjjvIwBH/preview?autoplay=1"
+                    src="https://player.vimeo.com/video/1203959899?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
                     className="w-full h-full rounded-xl"
-                    allow="autoplay"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                     allowFullScreen
-                    title="Presentation Video 1"
+                    title="Levy Eromo Media Sizzle"
                   />
                 )}
               </div>
@@ -97,11 +97,11 @@ export function PresentationsPageClient() {
                   </div>
                 ) : (
                   <iframe
-                    src="https://drive.google.com/file/d/1vaqs9vuIsr9YB2iAQWE7Fdy2iI3SJrkP/preview?autoplay=1"
+                    src="https://player.vimeo.com/video/1203970244?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
                     className="w-full h-full rounded-xl"
-                    allow="autoplay"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                     allowFullScreen
-                    title="Presentation Video 2"
+                    title="Shuki Levy Legacy"
                   />
                 )}
               </div>

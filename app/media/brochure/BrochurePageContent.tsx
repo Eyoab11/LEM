@@ -7,19 +7,18 @@ import { Header } from '../../../components/layout/Header';
 import { Footer } from '../../../components/layout/Footer';
 
 const brochurePages = [
-  { id: 1, title: 'Page 1', image: '/LEM_Corporate Brochure_Updated_2_page-0001.jpg' },
-  { id: 2, title: 'Page 2', image: '/LEM_Corporate Brochure_Updated_2_page-0002.jpg' },
-  { id: 3, title: 'Page 3', image: '/LEM_Corporate Brochure_Updated_2_page-0003.jpg' },
-  { id: 4, title: 'Page 4', image: '/LEM_Corporate Brochure_Updated_2_page-0004.jpg' },
-  { id: 5, title: 'Page 5', image: '/LEM_Corporate Brochure_Updated_2_page-0005.jpg' },
-  { id: 6, title: 'Page 6', image: '/LEM_Corporate Brochure_Updated_2_page-0006.jpg' },
-  { id: 7, title: 'Page 7', image: '/LEM_Corporate Brochure_Updated_2_page-0007.jpg' },
-  { id: 8, title: 'Page 8', image: '/LEM_Corporate Brochure_Updated_2_page-0008.jpg' },
-  { id: 9, title: 'Page 9', image: '/LEM_Corporate Brochure_Updated_2_page-0009.jpg' },
-  { id: 10, title: 'Page 10', image: '/LEM_Corporate Brochure_Updated_2_page-0010.jpg' },
-  { id: 11, title: 'Page 11', image: '/LEM_Corporate Brochure_Updated_2_page-0011.jpg' },
-  { id: 12, title: 'Page 12', image: '/LEM_Corporate Brochure_Updated_2_page-0012.jpg' },
-  { id: 13, title: 'Page 13', image: '/LEM_Corporate Brochure_Updated_2_page-0013.jpg' },
+  { id: 1, title: 'Page 1', image: '/LEM_Corporate Brochure_2_page-0001.jpg' },
+  { id: 2, title: 'Page 2', image: '/LEM_Corporate Brochure_2_page-0002.jpg' },
+  { id: 3, title: 'Page 3', image: '/LEM_Corporate Brochure_2_page-0003.jpg' },
+  { id: 4, title: 'Page 4', image: '/LEM_Corporate Brochure_2_page-0004.jpg' },
+  { id: 5, title: 'Page 5', image: '/LEM_Corporate Brochure_2_page-0005.jpg' },
+  { id: 6, title: 'Page 6', image: '/LEM_Corporate Brochure_2_page-0006.jpg' },
+  { id: 7, title: 'Page 7', image: '/LEM_Corporate Brochure_2_page-0007.jpg' },
+  { id: 8, title: 'Page 8', image: '/LEM_Corporate Brochure_2_page-0008.jpg' },
+  { id: 9, title: 'Page 9', image: '/LEM_Corporate Brochure_2_page-0009.jpg' },
+  { id: 10, title: 'Page 10', image: '/LEM_Corporate Brochure_2_page-0010.jpg' },
+  { id: 11, title: 'Page 11', image: '/LEM_Corporate Brochure_2_page-0011.jpg' },
+  { id: 12, title: 'Page 12', image: '/LEM_Corporate Brochure_2_page-0012.jpg' }
 ];
 
 export function BrochurePageContent() {

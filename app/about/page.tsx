@@ -12,7 +12,7 @@ import { Button } from '../../components/ui/Button';
 export default function AboutPage() {
   const capabilities = [
     "A global production team driven by creative and heartfelt storytelling, with a proven track record",
-    "A focus on projects that promote cross-cultural understanding",
+    "A focus on productions that promote cross-cultural understanding",
     "Positive concepts, stories and characters that resonate internationally",
     "Vast knowledge of the universal experiences of children and families in every part of our increasingly connected world",
     "Productions developed in-house on a streamlined budget, launched quickly to an international audience, and tracked with innovative, real time analytic systems",
@@ -108,7 +108,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Music Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -120,10 +120,10 @@ export default function AboutPage() {
           >
             <div className="w-16 h-0.5 bg-gradient-to-r from-blue-500 via-white to-blue-500 mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              PROJECTS
+              MUSIC
             </h2>
             <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto">
-              Levy Eromo Media is powered by a world‑class team whose work has helped define some of the most iconic family entertainment franchises on the planet. United by a singular creative vision and an unmatched legacy of success, this is not a studio that follows the market—we build timeless universes that imprint themselves on childhood, and endure for generations.
+              Levy Eromo Media is powered by a world‑class team. In particular, Shuki's musical work has helped define some of the most iconic family entertainment franchises on the planet. Music is in our DNA, and is at the center of all we produce. United by a singular creative vision and an unmatched legacy of success, this is not a studio that follows the market—we build timeless universes that imprint themselves on childhood, and endure for generations.
             </p>
           </motion.div>
 

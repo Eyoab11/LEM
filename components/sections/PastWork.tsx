@@ -74,7 +74,7 @@ export const PastWork = () => {
               }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wide transition-all duration-300 ease-out"
             >
-              PROJECTS
+              MUSIC
             </motion.h2>
           </div>
 
@@ -88,7 +88,7 @@ export const PastWork = () => {
               }}
               className="text-base md:text-lg text-gray-300 leading-relaxed transition-all duration-300 ease-out"
             >
-              Levy Eromo Media is powered by a world‑class team whose work has helped define some of the most iconic family entertainment franchises on the planet. United by a singular creative vision and an unmatched legacy of success, this is not a studio that follows the market—we build timeless universes that imprint themselves on childhood, and endure for generations.
+              Levy Eromo Media is powered by a world‑class team. In particular, Shuki's musical work has helped define some of the most iconic family entertainment franchises on the planet. Music is in our DNA, and is at the center of all we produce. United by a singular creative vision and an unmatched legacy of success, this is not a studio that follows the market—we build timeless universes that imprint themselves on childhood, and endure for generations.
             </motion.p>
           </div>
         </div>

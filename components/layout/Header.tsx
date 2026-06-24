@@ -13,7 +13,6 @@ export const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/#about-us' },
     { name: 'Music', href: '/#past-work' },
-    { name: 'Team', href: '/team' }
   ];
 
   const mediaItems = [
@@ -69,12 +68,14 @@ export const Header = () => {
             </motion.div>
           ))}
 
-          {/* Media Dropdown */}
+          {/* Media Dropdown - placed before Team */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: navItems.length * 0.1 }}
             className="relative"
+            onMouseEnter={() => setIsMediaDropdownOpen(true)}
+            onMouseLeave={() => setIsMediaDropdownOpen(false)}
           >
             <button 
               onClick={handleMediaClick}
@@ -97,34 +98,68 @@ export const Header = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 group-hover:w-full transition-all duration-300" />
             </button>
 
-            {/* Dropdown Menu */}
+            {/* Dropdown Menu with invisible bridge */}
             {isMediaDropdownOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.2 }}
-                className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-lg border border-gray-800 rounded-lg shadow-xl"
-              >
-                {mediaItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block px-4 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 transition-colors duration-300 first:rounded-t-lg last:rounded-b-lg"
-                    onClick={() => setIsMediaDropdownOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </motion.div>
+              <div className="absolute top-full left-0 pt-2">
+                {/* Invisible bridge to prevent dropdown from closing */}
+                <div className="h-2 w-48 absolute top-0 left-0" />
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="w-48 bg-black/95 backdrop-blur-lg border border-gray-800 rounded-lg shadow-xl"
+                >
+                  {mediaItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block px-4 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 transition-colors duration-300 first:rounded-t-lg last:rounded-b-lg"
+                      onClick={() => setIsMediaDropdownOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </motion.div>
+              </div>
             )}
+          </motion.div>
+
+          {/* Team Link */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: (navItems.length + 1) * 0.1 }}
+          >
+            <Link
+              href="/team"
+              className="relative text-gray-300 hover:text-blue-400 transition-colors duration-300 group"
+              onClick={() => setIsMediaDropdownOpen(false)}
+            >
+              <motion.span
+                className="inline-block"
+                whileHover={{ 
+                  y: [0, -4, 0],
+                  transition: { 
+                    duration: 0.4, 
+                    ease: "easeInOut",
+                    times: [0, 0.5, 1]
+                  }
+                }}
+              >
+                Team
+              </motion.span>
+              {/* Underline that slides in from left - blue gradient */}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 group-hover:w-full transition-all duration-300" />
+            </Link>
           </motion.div>
 
           {/* Contact Link */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: (navItems.length + 1) * 0.1 }}
+            transition={{ duration: 0.6, delay: (navItems.length + 2) * 0.1 }}
           >
             <Link
               href="/contact"
@@ -213,6 +248,15 @@ export const Header = () => {
                 ))}
               </div>
             </div>
+
+            {/* Mobile Team Link */}
+            <Link
+              href="/team"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-gray-300 hover:text-blue-400 py-3 border-b border-gray-800/50 transition-colors duration-300"
+            >
+              Team
+            </Link>
 
             {/* Mobile Contact Link */}
             <Link

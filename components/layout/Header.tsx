@@ -13,7 +13,6 @@ export const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/#about-us' },
     { name: 'Music', href: '/#past-work' },
-    { name: 'Team', href: '/team' }
   ];
 
   const mediaItems = [
@@ -69,7 +68,7 @@ export const Header = () => {
             </motion.div>
           ))}
 
-          {/* Media Dropdown */}
+          {/* Media Dropdown - placed before Team */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -127,11 +126,40 @@ export const Header = () => {
             )}
           </motion.div>
 
-          {/* Contact Link */}
+          {/* Team Link */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: (navItems.length + 1) * 0.1 }}
+          >
+            <Link
+              href="/team"
+              className="relative text-gray-300 hover:text-blue-400 transition-colors duration-300 group"
+              onClick={() => setIsMediaDropdownOpen(false)}
+            >
+              <motion.span
+                className="inline-block"
+                whileHover={{ 
+                  y: [0, -4, 0],
+                  transition: { 
+                    duration: 0.4, 
+                    ease: "easeInOut",
+                    times: [0, 0.5, 1]
+                  }
+                }}
+              >
+                Team
+              </motion.span>
+              {/* Underline that slides in from left - blue gradient */}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 group-hover:w-full transition-all duration-300" />
+            </Link>
+          </motion.div>
+
+          {/* Contact Link */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: (navItems.length + 2) * 0.1 }}
           >
             <Link
               href="/contact"
@@ -220,6 +248,15 @@ export const Header = () => {
                 ))}
               </div>
             </div>
+
+            {/* Mobile Team Link */}
+            <Link
+              href="/team"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-gray-300 hover:text-blue-400 py-3 border-b border-gray-800/50 transition-colors duration-300"
+            >
+              Team
+            </Link>
 
             {/* Mobile Contact Link */}
             <Link

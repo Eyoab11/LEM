@@ -210,7 +210,7 @@ export function generateSocialImageConfig(options: {
     switch (category.toLowerCase()) {
       case 'animation':
         template.background = '/superhero.jpg';
-        template.text.brand.content = 'Animation Projects - Levy Eromo Media';
+        template.text.brand.content = 'Musical Contributions - Levy Eromo Media';
         break;
       case 'power-rangers':
         template.background = '/powerrangers.jpg';

@@ -3,7 +3,7 @@ import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'BROCHURE',
-  description: 'Explore the Levy Eromo Media brochure showcasing our vision, projects, and capabilities in family entertainment production.',
+  description: 'Explore the Levy Eromo Media brochure showcasing our vision, musical contributions, and capabilities in family entertainment production.',
   keywords: [
     'Levy Eromo Media brochure',
     'media kit',

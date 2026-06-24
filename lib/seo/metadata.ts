@@ -244,7 +244,7 @@ export async function generateDynamicMetadata(
       type: 'article', // Dynamic pages are typically articles
       publishedTime: new Date().toISOString(),
       modifiedTime: new Date().toISOString(),
-      section: 'Projects',
+      section: 'Music',
       tags: options.keywords || [],
     };
   }
@@ -296,13 +296,13 @@ export function generateCategoryMetadata(category: {
   description: string;
   slug: string;
 }): Metadata {
-  const title = `${category.name} Projects`;
+  const title = `${category.name} Music`;
   const description = category.description || 
-    `Explore our ${category.name.toLowerCase()} projects and creative work at Levy Eromo Media.`;
+    `Explore our ${category.name.toLowerCase()} musical contributions and creative work at Levy Eromo Media.`;
   
   const keywords = [
     category.name.toLowerCase(),
-    `${category.name.toLowerCase()} projects`,
+    `${category.name.toLowerCase()} music`,
     'portfolio',
     'creative work',
     ...siteConfig.industryKeywords.slice(0, 3),

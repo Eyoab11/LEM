@@ -93,7 +93,7 @@ export const projectSocialImages = {
         url: '/social/projects/animation-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Animation Projects - Levy Eromo Media',
+        alt: 'Musical Contributions - Levy Eromo Media',
         type: 'image/jpeg',
       },
     ],

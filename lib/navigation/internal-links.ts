@@ -28,8 +28,8 @@ export const INTERNAL_PAGES = {
   },
   pastWork: {
     href: '/#past-work',
-    title: 'Our Work - Animation Portfolio',
-    description: 'Explore our creative portfolio of animation and media projects',
+    title: 'Our Music - Musical Contributions Portfolio',
+    description: 'Explore our musical contributions to iconic family entertainment franchises',
     category: 'portfolio'
   }
 } as const;

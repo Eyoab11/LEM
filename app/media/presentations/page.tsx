@@ -6,7 +6,7 @@ import { PresentationsPageClient } from './PresentationsPageClient';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'PRESENTATIONS',
-  description: 'Watch Levy Eromo Media presentations showcasing our vision, projects, and capabilities in family entertainment production.',
+  description: 'Watch Levy Eromo Media presentations showcasing our vision, musical contributions, and capabilities in family entertainment production.',
   keywords: [
     'Levy Eromo Media presentations',
     'media presentations',

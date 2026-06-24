@@ -8,7 +8,7 @@ import { generatePageMetadata } from '@/lib/seo';
 // Generate specific metadata for the 404 page
 export const metadata: Metadata = generatePageMetadata({
   title: 'Page Not Found',
-  description: 'The page you are looking for could not be found. Explore our animation projects, learn about our services, or contact our team.',
+  description: 'The page you are looking for could not be found. Explore our musical contributions, learn about our services, or contact our team.',
   keywords: [
     '404 error',
     'page not found',

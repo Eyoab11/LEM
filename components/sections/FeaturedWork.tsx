@@ -27,7 +27,7 @@ const workItems: WorkItem[] = [
     id: 2,
     title: "SCALABLE IP\nPORTFOLIO",
     description: "Our content portfolio spans a diverse range of formats, including animated and live-action series designed for episodic storytelling, as well as branded interactive app content and short form content. Merchandising, licensing and ancillary opportunities are central to our IP development strategy, extending the impact of our productions across various markets, creating additional revenue streams and brand exposure.",
-    image: "/GGI2.jpeg",
+    image: "/scalable.jpeg",
     hideButton: true
   },
   {

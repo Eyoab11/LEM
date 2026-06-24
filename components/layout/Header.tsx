@@ -75,6 +75,8 @@ export const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: navItems.length * 0.1 }}
             className="relative"
+            onMouseEnter={() => setIsMediaDropdownOpen(true)}
+            onMouseLeave={() => setIsMediaDropdownOpen(false)}
           >
             <button 
               onClick={handleMediaClick}
@@ -97,26 +99,31 @@ export const Header = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 group-hover:w-full transition-all duration-300" />
             </button>
 
-            {/* Dropdown Menu */}
+            {/* Dropdown Menu with invisible bridge */}
             {isMediaDropdownOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.2 }}
-                className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-lg border border-gray-800 rounded-lg shadow-xl"
-              >
-                {mediaItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block px-4 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 transition-colors duration-300 first:rounded-t-lg last:rounded-b-lg"
-                    onClick={() => setIsMediaDropdownOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </motion.div>
+              <div className="absolute top-full left-0 pt-2">
+                {/* Invisible bridge to prevent dropdown from closing */}
+                <div className="h-2 w-48 absolute top-0 left-0" />
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="w-48 bg-black/95 backdrop-blur-lg border border-gray-800 rounded-lg shadow-xl"
+                >
+                  {mediaItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block px-4 py-3 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 transition-colors duration-300 first:rounded-t-lg last:rounded-b-lg"
+                      onClick={() => setIsMediaDropdownOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </motion.div>
+              </div>
             )}
           </motion.div>
 

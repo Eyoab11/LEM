@@ -133,13 +133,13 @@ export default function AboutPage() {
               { id: 1, title: "He-Man & The Masters Of The Universe", youtubeId: "7yeA7a0uS3A", thumbnail: "/heman.jpg" },
               { id: 2, title: "Inspector Gadget", youtubeId: "rIc13VjeAw8", thumbnail: "/inspectorgadget.jpg" },
               { id: 3, title: "X-Men", youtubeId: "sAkL2-vh2Sk", thumbnail: "/xmen.jpg" },
-              { id: 4, title: "Rainbow Brite", youtubeId: "uQSTSxqIyCg", thumbnail: "/rainbowbrite.png" },
+              { id: 4, title: "Rainbow Brite", youtubeId: "Pp74T9b4Z40", thumbnail: "/rainbowbrite.png" },
               { id: 5, title: "Mighty Morphin Power Rangers", youtubeId: "nHalaFUqnTI", thumbnail: "/powerrangers.jpg" },
               { id: 6, title: "Spider-Man", youtubeId: "DZGN9fZvQhc", thumbnail: "/spiderman.jpg" },
               { id: 7, title: "Digimon", youtubeId: "MJvpOrzcGbI", thumbnail: "/digimon.jpg" },
               { id: 8, title: "Heathcliff", youtubeId: "9LLb8EBU9nQ", thumbnail: "/heatcliff.jpg" },
               { id: 9, title: "Mysterious Cities of Gold", youtubeId: "_ycG-xe1uSM", thumbnail: "/MYSTERIOUSCITIESOFGOLD.jpg" },
-              { id: 10, title: "M.A.S.K.", youtubeId: "o2Z1yLO9C-Q", thumbnail: "/mask.jpg" },
+              { id: 10, title: "M.A.S.K.", youtubeId: "uQSTSxqIyCg", thumbnail: "/mask.jpg" },
               { id: 11, title: "She-Ra", youtubeId: "wR65P73X5GI", thumbnail: "/she-ra.jpg" },
               { id: 12, title: "Ulysses 31", youtubeId: "OZ4c1X5ene8", thumbnail: "/ulysse.jpg" }
             ].map((item, index) => (

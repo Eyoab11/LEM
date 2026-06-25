@@ -37,7 +37,7 @@ const workItems: WorkItem[] = [
   {
     id: 4,
     title: "Rainbow Brite",
-    youtubeId: "uQSTSxqIyCg",
+    youtubeId: "Pp74T9b4Z40",
     services: "",
     customThumbnail: "/rainbowbrite.png"
   },
@@ -79,7 +79,7 @@ const workItems: WorkItem[] = [
   {
     id: 10,
     title: "M.A.S.K.",
-    youtubeId: "o2Z1yLO9C-Q",
+    youtubeId: "uQSTSxqIyCg",
     services: "",
     customThumbnail: "/mask.jpg"
   },

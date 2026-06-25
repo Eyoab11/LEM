@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 export const Statistics = () => {
-  const companyDescription = "A visionary global studio led by the creator of one of the most successful children's franchises in history, powered by a seasoned team with a proven record of building hit entertainment brands. Levy Eromo Media develops original IP engineered to resonate across cultures, platforms, and generations. With a franchise‑ready content ecosystem built for consumer products and long‑term brand growth, LEM is defining the next wave of global entertainment—where the future of storytelling knows no limits.";
+  const companyDescription = "A visionary global studio led by the co-creator of one of the most successful children’s franchises in history, powered by a seasoned team with a proven record of building hit entertainment brands. Levy Eromo Media develops original IP engineered to resonate across cultures, platforms, and generations. With a franchise‑ready content ecosystem built for consumer products and long‑term brand growth, LEM is defining the next wave of global entertainment—where the future of storytelling knows no limits.";
 
   return (
     <section className="bg-black py-16 px-8">

@@ -77,7 +77,7 @@ export default function TeamPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/shuki-piano.jpg"
+            src="/shuki-mod.png"
             alt="Shuki Levy at piano"
             fill
             className="object-cover object-[75%_20%] md:object-[center_20%]"

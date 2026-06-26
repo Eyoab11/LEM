@@ -139,7 +139,7 @@ export default function AboutPage() {
               { id: 7, title: "Digimon", youtubeId: "MJvpOrzcGbI", thumbnail: "/digimon.jpg" },
               { id: 8, title: "Heathcliff", youtubeId: "9LLb8EBU9nQ", thumbnail: "/heatcliff.jpg" },
               { id: 9, title: "Mysterious Cities of Gold", youtubeId: "_ycG-xe1uSM", thumbnail: "/MYSTERIOUSCITIESOFGOLD.jpg" },
-              { id: 10, title: "M.A.S.K.", youtubeId: "uQSTSxqIyCg", thumbnail: "/mask.jpg" },
+              { id: 10, title: "Super Mario Bros Super", youtubeId: "uQSTSxqIyCg", thumbnail: "/supermariobros.jpg" },
               { id: 11, title: "She-Ra", youtubeId: "wR65P73X5GI", thumbnail: "/she-ra.jpg" },
               { id: 12, title: "Ulysses 31", youtubeId: "OZ4c1X5ene8", thumbnail: "/ulysse.jpg" }
             ].map((item, index) => (

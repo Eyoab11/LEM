@@ -34,7 +34,7 @@ const workItems: WorkItem[] = [
     id: 3,
     title: "GLOBAL CONTENT\nECOSYSTEM",
     description: "We build globally minded IP designed from inception to travel across borders, cultures, and platforms—connecting with families through universal themes, music, and storytelling. Our approach integrates content, consumer products, and ancillary extensions into a cohesive global ecosystem that resonates emotionally while scaling commercially worldwide.",
-    image: "/superhero.jpg",
+    image: "/raptorss.jpg",
     hideButton: true
   }
 ];

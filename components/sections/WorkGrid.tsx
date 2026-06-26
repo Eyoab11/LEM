@@ -78,10 +78,10 @@ const workItems: WorkItem[] = [
   },
   {
     id: 10,
-    title: "M.A.S.K.",
+    title: "Super Mario Bros Super",
     youtubeId: "uQSTSxqIyCg",
     services: "",
-    customThumbnail: "/mask.jpg"
+    customThumbnail: "/supermariobros.jpg"
   },
   {
     id: 11,
